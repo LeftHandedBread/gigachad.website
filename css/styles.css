@@ -31,6 +31,10 @@
   a:hover {
     text-decoration: underline;
   }
+
+  li {
+    padding-left: 10px;
+  }
   
   header {
     text-align: center;
@@ -52,6 +56,13 @@
   
   section {
     margin-bottom: 40px;
+  }
+
+  table, th, td {
+    border: 1px solid #a0a0a0;
+    border-collapse: collapse;
+    text-align: center;
+    
   }
   
 
