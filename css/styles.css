@@ -22,6 +22,10 @@
   p {
     margin-bottom: 20px;
   }
+
+  br {
+    margin: 0px;
+  }
   
   a {
     color: #ffc56d;
@@ -89,7 +93,31 @@
     max-width: 900px;
   }
 
+  pre {
+    background-color: #222;
+    border: #ffc56dad 2px solid;
+    border-radius: 7px;
+    font-family: 'Courier New', Courier, monospace;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
 
+  code {
+    background-color: #222;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin:0px;
+
+  }
 
 @media screen and (hover:none) {
     a {

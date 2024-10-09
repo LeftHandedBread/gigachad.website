@@ -12,7 +12,7 @@
         <h1 id="top">Gigachad VPN</h1>
         <h2><a href="index.html">Home</a></h2>
         <img src="img/gigachad_pc.jpg" width="720">
-        <h3>Trust no one.</h3>
+        <h3>The most trustworthy VPN is the VPN you make yourself.</h3>
     </header>
     <hr>
     <main>
@@ -22,6 +22,7 @@
                 We use VPNs in the way they were originally intended.
                 Connecting computers across the web into one single network where we do what we want, the way we want to do it.
                 <br><br>
+                No public IP? No control over your home network? No problem.
                 Share files across the network from anywhere, to anywhere. Forward a port to host a server. Get access to VPN exclusive databases.
                 We don't mess around. Help us build an intranet fit for only the giga-est of chads.
             </p>
@@ -30,18 +31,67 @@
             <h2>Join</h2>
             <p>The VPN is invite only. Contact Bread or Carson to request to join.</p>
         </section>
-        <section>
-            <h2>Downloads</h2>
-            <a href="https://www.wireguard.com" target="_blank">Wireguard Client</a>
-        </section>
+        <hr>
         <section>
             <h2>Client Setup (Linux)</h2>
-            <p>WIP</p>
+            <p>First, <a href="https://www.wireguard.com" target="_blank">Download Wireguard</a> for your Linux environment.</p>
+            <p>Second, Enable IP Forwarding in the text file <code>/etc/sysctl.conf</code>, by removing the comment on line 28:<br>
+                <code>#net.ipv4.ip_forward = 1</code> <strong>→</strong> <code>net.ipv4.ip_forward = 1</code></p>
+            <p>You can also do this for IPv6 on line 33, if you want, which we may support in the future, but don't currently:<br>
+                <code>#net.ipv6.ip_forward = 1</code> <strong>→</strong> <code>net.ipv6.ip_forward = 1</code></p>
+            <p>Third, generate a key pair to use. You will put your private key on line 2 in the <code>/etc/wireguard/wg0.conf</code> file, and the public one you will give to Bread or Carson.<br>
+                <code>wg genkey > server-private-key</code>// Generate Private Key<br>
+                <code>wg pubkey < server-private-key > server-public-key</code>// Generate Public Key from Private Key<br>
+                This will generate a key pair, and store them in text files. You can use <code>cat</code> to view them:<br>
+                <code>cat server-private-key</code> // Keep this secret.<br>
+                <code>cat server-public-key</code> // Give this to Bread or Carson</p>
+                <p>Now, you can make a configuration file at <code>/etc/wireguard/wg0.conf</code>, and fill it with the following:</p>
+                <strong><u>/etc/wireguard/wg0.conf</u></strong>
+                <pre>     
+    [Interface]
+    PrivateKey = <font color="#ffc56d">(Your Private Key)</font>
+    Address = 10.0.0.<font color="#ffc56d">X</font>/32 <font color="#ffc56d"># Where "X" = Address given by Bread or Carson</font>
+    DNS = 10.0.0.1 <font color="#ffc56d"># Use Gigachad DNS (optional)</font>
+
+    [Peer]
+    PublicKey = y8+He4nBEAiVcjsxzP70qwfgJlkcs7g8LcWWQfi6nEE=
+    AllowedIPs = 0.0.0.0/1, 128.0.0.0/1
+    Endpoint = 192.3.251.174:51820
+    PersistentKeepalive = 20
+                </pre>
+                <p>Assuming you use systemd, you can start wireguard with this command:<br>
+                    <code>systemctl start wg-quick@wg0</code><br>
+                    And you can stop it with this command:<br>
+                    <code>systemctl stop wg-quick@wg0</code><br>
+                    If you want wireguard to start automatically on PC startup, create a system link:<br>
+                    <code>systemctl enable wg-quick@wg0.conf</code></p>
+                <p>And that's it. Your VPN should be up and running.</p>
         </section>
+        <hr>
         <section>
             <h2>Client Setup (Windows)</h2>
-            <p>WIP</p>
+            <p>First, <a href="https://www.wireguard.com" target="_blank">Download Wireguard</a>, and install it.</p>
+            <p>Second, add an empty tunnel:<br>
+                <img src="img/wireguard-windows-add-tunnel.png"><br>
+                This should automatically generate a <code>Private key</code> and <code>Public Key</code>.</p>
+            <p>Third, fill your configuration file with the following:<br>
+                Remeber to not overwrite the <code>Private Key</code>.</p>
+            <strong><u>Config:</u></strong>
+            <pre>     
+    [Interface]
+    PrivateKey = <font color="#ffc56d">Auto-Generated Private Key. Don't overwrite this line.</font>
+    Address = 10.0.0.<font color="#ffc56d">X</font>/32 <font color="#ffc56d"># Where "X" = Address given by Bread or Carson</font>
+    DNS = 10.0.0.1 <font color="#ffc56d"># Use Gigachad DNS (optional)</font>
+
+    [Peer]
+    PublicKey = y8+He4nBEAiVcjsxzP70qwfgJlkcs7g8LcWWQfi6nEE=
+    AllowedIPs = 0.0.0.0/1, 128.0.0.0/1
+    Endpoint = 192.3.251.174:51820
+    PersistentKeepalive = 20
+            </pre>
+            <p>Now click <code>Save</code>, and then click <code>Activate</code> to activate the VPN, and you should be connected.</p>
         </section>
+        <hr>
         <section>
             <h2>Port Map</h2>
             <table> 
