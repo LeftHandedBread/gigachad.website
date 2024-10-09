@@ -48,16 +48,16 @@
                 <p>Now, you can make a configuration file at <code>/etc/wireguard/wg0.conf</code>, and fill it with the following:</p>
                 <strong><u>/etc/wireguard/wg0.conf</u></strong>
                 <pre>     
-    [Interface]
-    PrivateKey = <font color="#ffc56d">(Your Private Key)</font>
-    Address = 10.0.0.<font color="#ffc56d">X</font>/32 <font color="#ffc56d"># Where "X" = Address given by Bread or Carson</font>
-    DNS = 10.0.0.1 <font color="#ffc56d"># Use Gigachad DNS (optional)</font>
+[Interface]
+PrivateKey = <font color="#ffc56d">(Your Private Key)</font>
+Address = 10.0.0.<font color="#ffc56d">X</font>/32 <font color="#ffc56d"># Where "X" = Address given by Bread or Carson</font>
+DNS = 10.0.0.1 <font color="#ffc56d"># Use Gigachad DNS (optional)</font>
 
-    [Peer]
-    PublicKey = y8+He4nBEAiVcjsxzP70qwfgJlkcs7g8LcWWQfi6nEE=
-    AllowedIPs = 0.0.0.0/1, 128.0.0.0/1
-    Endpoint = 192.3.251.174:51820
-    PersistentKeepalive = 20
+[Peer]
+PublicKey = y8+He4nBEAiVcjsxzP70qwfgJlkcs7g8LcWWQfi6nEE=
+AllowedIPs = 0.0.0.0/1, 128.0.0.0/1
+Endpoint = 192.3.251.174:51820
+PersistentKeepalive = 20
                 </pre>
                 <p>Assuming you use systemd, you can start wireguard with this command:<br>
                     <code>systemctl start wg-quick@wg0</code><br>
