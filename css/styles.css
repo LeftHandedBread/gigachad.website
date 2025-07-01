@@ -16,18 +16,43 @@ h1, h2 {
 
 h1 {
   font-size: 36px;
+  text-align: center;
 }
 
 h2 {
   font-size: 24px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 20px;
+  text-align: center;
+}
+
+h4 {
+  font-size: 20px;
+  text-align: center;
+  color: #fff;
 }
 
 p {
+  font-size: 18px;
+  text-indent: 24px;
   margin-bottom: 20px;
 }
 
 br {
   margin: 0px;
+}
+
+div {
+  display:flex;
+}
+
+section {
+  align-self: top;
+  min-width:50%;
+  margin:0px;
 }
 
 a {
@@ -41,6 +66,7 @@ a:hover {
 
 li {
   padding-left: 10px;
+  font-size: 18px;
 }
 
 header {
@@ -52,6 +78,10 @@ img {
   margin: 20px auto;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.signature {
+  box-shadow: 0 0 0px rgba(0, 0, 0, 0);
 }
 
 iframe {
@@ -66,10 +96,6 @@ iframe {
 main {
   max-width: 800px;
   margin: 0 auto;
-}
-
-section {
-  margin-bottom: 40px;
 }
 
 table, th, td {
