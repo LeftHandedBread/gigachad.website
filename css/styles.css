@@ -252,11 +252,16 @@ code {
         flex-wrap: wrap;
         gap: 1em;
         padding: 1em 0 1em 0;
+        height: auto;
+        min-height: 4.5em;
     }
     .nav-btn {
         font-size: 1.1em;
         padding: 0.6em 1.2em;
         margin-bottom: 0.5em;
+    }
+    body {
+        padding-top: 8em; /* Increased padding for taller nav on mobile */
     }
 }
 @media screen and (max-width: 600px) {
@@ -264,29 +269,46 @@ code {
         grid-template-columns: 1fr;
     }
     body {
-    font-size: 16px;
-    padding: 10px;
-  }
+        font-size: 16px;
+        padding: 10px;
+        padding-top: 10em; /* Even more padding for very small screens */
+    }
 
-  h1 {
-    font-size: 28px;
-  }
+    h1 {
+        font-size: 28px;
+    }
 
-  h2 {
-    font-size: 20px;
-  }
+    h2 {
+        font-size: 20px;
+    }
 
-  img {
-    border-radius: 5px;
-  }
+    img {
+        border-radius: 5px;
+    }
 
-  footer img {
-    max-width: 200px;
-    margin: 10px auto;
-  }
+    footer img {
+        max-width: 200px;
+        margin: 10px auto;
+    }
 
-  audio {
-    width: 100%;
-  }
+    audio {
+        width: 100%;
+    }
+    
+    .main-nav {
+        gap: 0.5em;
+        padding: 0.5em;
+    }
+    
+    .nav-btn {
+        font-size: 0.95em;
+        padding: 0.5em 0.8em;
+        margin: 0.2em;
+    }
+    
+    /* Hide the search on very small screens to save space */
+    #site-search {
+        display: none;
+    }
 }
 
