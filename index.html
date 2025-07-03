@@ -28,7 +28,7 @@
     <main>
         <section id="about-section">
             <h2>Welcome to The Gigachad Network</h2>
-            <p>After years of being subjectgated to the whimsical inefficencies of cringe software companies, doomed to the pains of not owning our own technology, we have decided we had had enough.</p>                
+            <p>After years of being subjected to the whimsical inefficiencies of cringe software companies, doomed to the pains of not owning our own technology, we have decided we had enough.</p>
             <p>We present to you the Gigachad Network, a collection of self-hosted services and game servers that you can use to take back control of your digital life. We are not affiliated with any company, we are not beholden to any corporation, and we do not sell your data. We are just a group of people who want to make the internet a better place. We are not here to make money, we are here to make a difference.</p>
             <h4>We are not a company, we are not a business, we are <a href="https://www.youtube.com/watch?v=AnwNuH497RE" target="_blank">Gigachads</a>.</h4>
             <p>Bread, Hyperdriveguy, Ben_bone_</p>
@@ -39,6 +39,26 @@
             </div>
         </section>
         <hr>
+        <section id="service-explanations" style="margin-top:2em;">
+            <h2 style="color:#ffc56d;">What’s Available on the Gigachad Network?</h2>
+            <p style="max-width:800px; margin:0 auto 1em auto; font-size:1.1em;">
+            All services listed below are <strong>self-hosted</strong> by the Gigachad Network—your data stays private and under your control. All services are Ad-free and payment free. More information about each service can be found in Articles and Tutorials.
+            </p>
+            <ul style="max-width:800px; margin:0 auto; font-size:1.1em; line-height:1.7;"></ul>
+            <li><strong style="color:#ffc56d;">Jellyfin</strong>: Media streaming server for movies and TV shows. Your own private Netflix alternative.</li>
+            <li><strong style="color:#ffc56d;">Vaultwarden (coming soon)</strong>: Password manager. Securely store and manage your passwords.</li>
+            <li><strong style="color:#ffc56d;">VPN</strong>: Secure VPN access using WireGuard. Protect your privacy and access your home network from anywhere.</li>
+            <li><strong style="color:#ffc56d;">NextCloud</strong>: Personal cloud storage. Sync and share files, calendars, and contacts across your devices.</li>
+            <li><strong style="color:#ffc56d;">AudiobookShelf</strong>: Audiobook and podcast streaming. Listen to your audiobooks and podcasts anywhere.</li>
+            <li><strong style="color:#ffc56d;">Immich</strong>: Cloud photo management. Backup, organize, and share your photos and videos.</li>
+            <li><strong style="color:#ffc56d;">Navidrome</strong>: Music streaming server. Stream your music collection to any device, anywhere.</li>
+            <li><strong style="color:#ffc56d;">Gigachad AI (coming soon)</strong>: AI chat and tools. Powerful AI features for productivity and fun.</li>
+            <li><strong style="color:#ffc56d;">Gigachad Email (coming soon)</strong>: Private email service. Take control of your email privacy.</li>
+           <li><strong style="color:#ffc56d;">Our Own Game Servers</strong>: Play on some of our own private servers. Including Minecraft, Factorio, and Valheim</li>
+            <li><strong style="color:#ffc56d;">Server Hosting (Toast Host)</strong>: Start your own game server with Toast Host. Easy, fast, and reliable game server hosting.</li>
+            </ul>
+        <hr>
+        </section>
         <section id="services">
             <h2>Services</h2>
             <div class="services-buttons">
@@ -48,9 +68,12 @@
                 <a class="service-btn" href="https://cloud.gigachad.website" title="Personal cloud storage">NextCloud</a>
                 <a class="service-btn" href="http://gigachad.website:30067" title="Audiobook streaming">AudiobookShelf</a>
                 <a class="service-btn" href="http://gigachad.website:30041" title="Cloud Photo management">Immich</a>
+                <a class="service-btn" href="http://gigachad.website:30043" title="Music streaming server">Navidrome</a>
                 <a class="service-btn" href="under-construction.html" title="AI Chat">Gigachad AI (coming soon)</a>
                 <a class="service-btn" href="https://gigachad.website:30022" title="Private email service">Gigachad Email (coming soon)</a>
-                <a class="service-btn" href="https://toast-host.com" title="Start your own game server from Toast Host">Server Hosting (Toast Host)</a>
+            </div>
+            <div style="display: flex; justify-content: center; margin-top: 1em;">
+                <a class="service-btn" href="https://toast-host.com" title="Start your own game server from Toast Host" style="max-width:320px; min-width:180px;">Server Hosting (Toast Host)</a>
             </div>
         </section>
         <hr>
@@ -83,6 +106,7 @@
                 <h3><a href="tutorials/immich.html">Setting up Immich</a></h3>
                 <h3><a href="tutorials/gigachadai.html">Setting up AI</a></h3>
                 <h3><a href="vpn.html">Setting up WireGuard</a></h3>
+                <h3><a href="tutorials/navidrome.html">Setting up Navidrome</a></h3>
         </section>
         <hr>
         <section id="contact">
@@ -96,6 +120,11 @@
             </ul>
             <p>For general discussion, you can join our <a href="https://discord.gg/jm6MG6HSbh">Discord Server</a>.</p>
         </section>
+        <div style="display: flex; justify-content: center; margin: 2em 0 1em 0;">
+            <a href="https://www.paypal.com/donate" target="_blank" style="background:#ffc56d; color:#222; font-weight:bold; font-size:1.2em; padding:0.9em 2.2em; border-radius:12px; text-decoration:none; box-shadow:0 2px 8px rgba(0,0,0,0.10); border:2px solid #ffc56d; transition:background 0.2s, color 0.2s;">
+                Donate via PayPal
+            </a>
+        </div>
     </main>
     <hr>
     <footer>
@@ -214,6 +243,20 @@
             desc: "Tutorial for Toast Host game server panel",
             type: "tutorial",
             keywords: ["server", "hosting", "game", "games", "minecraft", "valheim", "factorio", "host", "toast", "panel", "setup", "tutorial"]
+        },
+        {
+            title: "Navidrome",
+            url: "http://gigachad.website:4533",
+            desc: "Music streaming server",
+            type: "service",
+            keywords: ["music", "audio", "stream", "streaming", "songs", "albums", "artist", "artists", "playlist", "playlists", "mp3", "flac", "jukebox", "subsonic", "navidrome"]
+        },
+        {
+            title: "Setting up Navidrome",
+            url: "tutorials/navidrome.html",
+            desc: "Tutorial for Navidrome music server",
+            type: "tutorial",
+            keywords: ["music", "audio", "stream", "streaming", "songs", "albums", "artist", "artists", "playlist", "playlists", "mp3", "flac", "jukebox", "subsonic", "navidrome", "setup", "tutorial"]
         },
         // --- OTHER CONTENT (articles, etc) ---
         {
