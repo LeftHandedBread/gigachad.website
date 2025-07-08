@@ -65,9 +65,10 @@ section {
 a {
   color: #ffc56d;
   text-decoration: none;
+  transition: none;
 }
 
-a:hover {
+a:hover, a:focus-visible {
   text-decoration: underline;
 }
 
@@ -181,8 +182,9 @@ code {
     border-radius: 8px;
     text-decoration: none;
     font-size: 1.1em;
-    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.18s cubic-bezier(.4,2,.6,1), filter 0.18s;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    filter: brightness(1) saturate(1);
     border: 2px solid #ffc56d;
     font-weight: bold;
     box-sizing: border-box;
@@ -194,8 +196,20 @@ code {
 .service-btn:hover, .service-btn:focus {
     background: #ffc56d;
     color: #222;
-    box-shadow: 0 4px 16px rgba(255,197,109,0.15);
+    box-shadow: 0 8px 24px rgba(255,197,109,0.18), 0 2px 8px rgba(0,0,0,0.10);
     text-decoration: none;
+    transform: translateY(-4px) scale(1.04) rotate(-1deg);
+    filter: brightness(1.08) saturate(1.2) drop-shadow(0 0 8px #ffc56d44);
+    outline: 2px solid #ffc56d;
+}
+
+/* Add a subtle animation for button appearance */
+@keyframes serviceBtnPopIn {
+    0% { opacity: 0; transform: scale(0.92) translateY(16px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+.service-btn {
+    animation: serviceBtnPopIn 0.5s cubic-bezier(.4,2,.6,1) both;
 }
 
 .main-nav {
