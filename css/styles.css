@@ -172,9 +172,9 @@ code {
     margin-bottom: 1em;
 }
 .service-btn {
-    width: 100%;
-    min-width: 180px;
-    max-width: 320px;
+  width: 260px;
+  min-width: 180px;
+  max-width: 320px;
     background: #222;
     color: #ffc56d;
     text-align: center;
@@ -210,6 +210,22 @@ code {
 }
 .service-btn {
     animation: serviceBtnPopIn 0.5s cubic-bezier(.4,2,.6,1) both;
+}
+
+/* Ensure long labels don't change button height and allow centering specific buttons */
+.service-btn {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 56px;
+}
+
+/* Center a service button across the grid (used for Gigachad AI) */
+.center-service {
+  grid-column: 1 / -1;
+  justify-self: center;
+  max-width: 320px;
+  width: 260px;
 }
 
 .main-nav {
@@ -282,7 +298,11 @@ code {
     .services-buttons {
         grid-template-columns: 1fr;
     }
-    body {
+  /* Make buttons fluid on narrower screens */
+  .service-btn {
+    width: 100%;
+    max-width: none;
+  }
         font-size: 16px;
         padding: 10px;
         padding-top: 10em; /* Even more padding for very small screens */
