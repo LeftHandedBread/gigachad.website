@@ -3,8 +3,8 @@
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="img/favicon.png" type="image/png">
-    <title>Gigachad Network</title>
+    <link rel="icon" href="/img/favicon.png" type="image/png">
+    <title>Gigachad Network - AudioBookShelf</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body id="top">
@@ -13,7 +13,6 @@
         <a class="nav-btn" href="/index.html#services">Services</a>
         <a class="nav-btn" href="/index.html#gameservers">Game Servers</a>
         <a class="nav-btn" href="/index.html#articles">Articles</a>
-        <a class="nav-btn" href="/index.html#tutorials">Tutorials</a>
         <a class="nav-btn" href="/index.html#contact">Contact</a>
     </nav>
     <header>
@@ -25,34 +24,65 @@
 
     <main>
         <section id="about">
-            <h2>What is AudioBookShelf</h2>
-            <p>AudioBookShelf is a self-hosted audiobook and podcast server. It lets you stream your audiobooks and podcasts to any device. This tutorial will guide you through setting up the AudioBookShelf app on your phone.</p>
+            <h2>What is AudioBookShelf?</h2>
+            <p>AudioBookShelf is a self-hosted audiobook and podcast server. Stream your audiobooks and podcasts to any device—phone, tablet, or computer. This tutorial will walk you through getting started with AudioBookShelf.</p>
         </section>
         <hr>
-        <section id="template">
-            <h3>Step 1: Download the AudioBookShelf App</h3>
-            <p>
-                You can download the AudioBookShelf app or forks of it from:<br>
-                • <a href="https://apps.apple.com/app/shelf-player/id6472058006" target="_blank">Shelf Player (App Store, $5)</a> – a fork for iOS<br>
-                • <a href="https://play.google.com/store/apps/details?id=com.audiobookshelf.app" target="_blank">Google Play (official AudioBookShelf app)</a><br>
-                • <a href="https://f-droid.org/en/packages/org.grakovne.lissen/" target="_blank">Lissen (F-Droid)</a> – a lightweight, simple audiobook player
+        <section id="setup">
+            <h2>Quick Setup Guide</h2>
+
+            <h3>Step 1: Choose Your App</h3>
+            <p>Download an AudioBookShelf-compatible app:</p>
+            <ul>
+                <li><strong>iOS:</strong> <a href="https://apps.apple.com/app/shelf-player/id6472058006" target="_blank">Shelf Player</a> ($5, one-time purchase)</li>
+                <li><strong>iOS:</strong> <a href="https://apps.apple.com/us/app/still-for-audiobookshelf/id6754208326" target="_blank">Still for Audiobookshelf</a> - Free with in-app purchases</li>
+                <li><strong>Android:</strong> <a href="https://play.google.com/store/apps/details?id=com.audiobookshelf.app" target="_blank">AudioBookShelf (Google Play)</a> - Free</li>
+                <li><strong>Android (f-droid):</strong> <a href="https://f-droid.org/en/packages/org.grakovne.lissen/" target="_blank">Lissen (F-Droid)</a> - Lightweight, open-source</li>
+                <li><strong>Web Browser:</strong> Visit <a href="http://listen.gigachad.website" target="_blank">listen.gigachad.website</a> directly (no app needed)</li>
+            </ul>
+
+            <h3>Step 2: Connect to the Server</h3>
+            <p><strong>In the app:</strong></p>
+            <ol>
+                <li>Open the AudioBookShelf app</li>
+                <li>Enter the server URL: <code>https://listen.gigachad.website</code></li>
+                <li>Log in with your account credentials</li>
+            </ol>
+            <p><strong>In a web browser:</strong></p>
+            <ol>
+                <li>Visit <a href="http://listen.gigachad.website" target="_blank">listen.gigachad.website</a></li>
+                <li>Log in with your account credentials</li>
+            </ol>
+            <p style="background: rgba(255,197,109,0.1); padding: 1em; border-left: 4px solid #ffc56d; border-radius: 4px;">
+                <strong>Don't have an account?</strong> Contact the server administrators to create one for you.
             </p>
-            <h3>Step 2: App Login</h3>
-            <p>Open the AudioBookShelf app and enter <a href="http://gigachad.website:30067" target="_blank">http://gigachad.website:30067</a> into the Server box. Enter the account details that were assigned to you.</p>
-            <p>If you don't have an account, please contact the server administrators to create one for you.</p>
-            <h3>Step 3: Enjoy AudioBookShelf</h3>
-            <p>You can now sign in on any device or web browser and access your audiobooks and podcasts. If you have any problems, questions, or audiobook requests, contact <strong>Ben_bone_</strong> on Discord or through our support email <a href="mailto:v4bkmt0jv@mozmail.com">v4bkmt0jv@mozmail.com</a>.</p>
+
+            <h3>Step 3: Start Listening</h3>
+            <p>Once logged in, you can:</p>
+            <ul>
+                <li>Browse the audiobook and podcast library</li>
+                <li>Download content for offline listening</li>
+                <li>Sync your progress across all devices</li>
+                <li>Adjust playback speed and skip silences</li>
+            </ul>
+
+            <h3>Need Help?</h3>
+            <p>For problems, questions, or content requests, reach out:</p>
+            <ul>
+                <li><strong>Discord:</strong> Contact <strong>@ben_bone_</strong></li>
+                <li><strong>Email:</strong> <a href="mailto:v4bkmt0jv@mozmail.com">v4bkmt0jv@mozmail.com</a></li>
+            </ul>
         </section>
     </main>
     <hr>
     <footer>
         <p><a href="#top">Go to top</a></p>
-        <img src="img/gigachad_pc.jpg" alt="Gigachad on his PC" loading="lazy"> <!-- image is 680 x 382 pixels -->
+        <img src="/img/gigachad_pc.jpg" alt="Gigachad on his PC" loading="lazy"> <!-- image is 680 x 382 pixels -->
         <audio controls>
-            <source src="files/can-you-feel-my-heart.mp3" type="audio/mpeg">
+            <source src="/files/can-you-feel-my-heart.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
-        <p>&copy; 2025 Gigachad Networks. All rights reserved.</p>
+        <p>&copy; 2026 Gigachad Network. All rights reserved.</p>
     </footer>
 </body>
 </html>

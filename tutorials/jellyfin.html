@@ -1,21 +1,20 @@
 <!DOCTYPE html>
-<nav class="main-nav">
-    <a class="nav-btn" href="/index.html">Home</a>
-    <a class="nav-btn" href="/index.html#services">Services</a>
-    <a class="nav-btn" href="/index.html#gameservers">Game Servers</a>
-    <a class="nav-btn" href="/index.html#articles">Articles</a>
-    <a class="nav-btn" href="/index.html#tutorials">Tutorials</a>
-    <a class="nav-btn" href="/index.html#contact">Contact</a>
-</nav>
 <html lang="en">
-    <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="img/favicon.png" type="image/png">
-    <title>Gigachad Network</title>
+    <link rel="icon" href="/img/favicon.png" type="image/png">
+    <title>Gigachad Network - Jellyfin Setup</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body id="top">
+    <nav class="main-nav">
+        <a class="nav-btn" href="/index.html">Home</a>
+        <a class="nav-btn" href="/index.html#services">Services</a>
+        <a class="nav-btn" href="/index.html#gameservers">Game Servers</a>
+        <a class="nav-btn" href="/index.html#articles">Articles</a>
+        <a class="nav-btn" href="/index.html#contact">Contact</a>
+    </nav>
     <header>
         <h1><a href="/index.html">The Gigachad Network</a></h1>
         <img src="/img/gigachad-1.jpg" width="720">
@@ -24,37 +23,74 @@
     <hr>
     <main>
         <section id="about">
-            <h2>What is Jellyfin</h2>
-            <p>Jellyfin is a free, open-source media server that lets you organize, manage, and stream your movies, TV shows, music, and more to any device. With Jellyfin, you can create your own personal Netflix at home, accessible from your phone, tablet, or computer. This tutorial will guide you through setting up the Jellyfin app on your phone.</p>
+            <h2>What is Jellyfin?</h2>
+            <p>Jellyfin is a free, open-source media server for streaming movies, TV shows, music, and more to any device. Think of it as your own personal Netflix—accessible from your phone, tablet, computer, or smart TV. This tutorial will get you started with Jellyfin.</p>
         </section>
         <hr>
-        <section id="template">
-            <h3>Step 1: Download the Jellyfin App</h3>
-            <p>
-                Download Jellyfin from:
-                <a href="https://apps.apple.com/app/jellyfin/id1480192618" target="_blank">App Store</a>,
-                <a href="https://f-droid.org/packages/org.jellyfin.mobile/" target="_blank">F-Droid</a>,
-                or
-                <a href="https://play.google.com/store/apps/details?id=org.jellyfin.mobile" target="_blank">Google Play</a>.
+        <section id="setup">
+            <h2>Quick Setup Guide</h2>
+
+            <h3>Step 1: Choose Your Access Method</h3>
+            <p><strong>Option A: Mobile App (Recommended)</strong></p>
+            <p>Download the official Jellyfin app:</p>
+            <ul>
+                <li><strong>iOS:</strong> <a href="https://apps.apple.com/app/jellyfin/id1480192618" target="_blank">App Store</a></li>
+                <li><strong>Android:</strong> <a href="https://play.google.com/store/apps/details?id=org.jellyfin.mobile" target="_blank">Google Play</a></li>
+                <li><strong>Android (Alternative):</strong> <a href="https://f-droid.org/packages/org.jellyfin.mobile/" target="_blank">F-Droid</a></li>
+            </ul>
+
+            <p><strong>Option B: Web Browser</strong></p>
+            <p>Visit <a href="https://watch.gigachad.website" target="_blank">watch.gigachad.website</a> directly—no app needed!</p>
+
+            <h3>Step 2: Connect to the Server</h3>
+            <p><strong>In the app:</strong></p>
+            <ol>
+                <li>Open the Jellyfin app</li>
+                <li>Tap "Add Server"</li>
+                <li>Enter the server URL: <code>http://watch.gigachad.website</code></li>
+                <li>Log in with your account credentials</li>
+            </ol>
+
+            <p><strong>In a web browser:</strong></p>
+            <ol>
+                <li>Visit <a href="http://watch.gigachad.website" target="_blank">watch.gigachad.website</a></li>
+                <li>Log in with your account credentials</li>
+            </ol>
+
+            <p style="background: rgba(255,197,109,0.1); padding: 1em; border-left: 4px solid #ffc56d; border-radius: 4px;">
+                <strong>Don't have an account?</strong> Contact the server administrators to create one for you.
             </p>
-            <h3>Step 2: App Login</h3>
-            <p>Open the Jellyfin app and enter <strong><a href="http://gigachad.website:30013" target="_blank">http://gigachad.website:30013</a></strong> into the Server endpoint URL. Enter the account details that were assigned to you.</p>
-            <p>If you don't have an account, please contact the server administrators to create one for you.</p>
-            <h3>Step 3: App Setup</h3>
-            <p>To browse and stream your media, use the navigation options in the app. You can also adjust your settings by clicking on the gear icon in the top right corner.</p>
-            <h3>Step 4: Enjoy Jellyfin</h3>
-            <p>You can now sign in on any device or web browser and access the available movies and shows. If you have any problems, questions, or movie requests, contact <strong>Ben_bone_</strong> on Discord or through our support email <a href="mailto:v4bkmt0jv@mozmail.com">v4bkmt0jv@mozmail.com</a>.</p>
+
+            <h3>Step 3: Browse & Stream</h3>
+            <p>Once logged in, you can:</p>
+            <ul>
+                <li>Browse movies, TV shows, and music organized by library</li>
+                <li>Use filters and search to find content quickly</li>
+                <li>Resume watching from where you left off on any device</li>
+                <li>Create watchlists and mark favorites</li>
+                <li>Adjust quality settings based on your connection</li>
+            </ul>
+            
+            <h3>Request Content</h3>
+            <p>Want to request a movie or show? Use <a href="http://seer.gigachad.website" target="_blank">Jellyseer</a> to submit content requests. You can log in with the same Jellyfin credentials!</p>
+
+            <h3>Need Help?</h3>
+            <p>For problems, questions, or content requests, reach out:</p>
+            <ul>
+                <li><strong>Discord:</strong> Contact <strong>@ben_bone_</strong></li>
+                <li><strong>Email:</strong> <a href="mailto:v4bkmt0jv@mozmail.com">v4bkmt0jv@mozmail.com</a></li>
+            </ul>
         </section>
     </main>
     <hr>
     <footer>
         <p><a href="#top">Go to top</a></p>
-        <img src="img/gigachad_pc.jpg" alt="Gigachad on his PC" loading="lazy"> <!-- image is 680 x 382 pixels -->
+        <img src="/img/gigachad_pc.jpg" alt="Gigachad on his PC" loading="lazy"> <!-- image is 680 x 382 pixels -->
         <audio controls>
-            <source src="files/can-you-feel-my-heart.mp3" type="audio/mpeg">
+            <source src="/files/can-you-feel-my-heart.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
-        <p>&copy; 2025 Gigachad Networks. All rights reserved.</p>
+        <p>&copy; 2026 Gigachad Network. All rights reserved.</p>
     </footer>
 </body>
 </html>

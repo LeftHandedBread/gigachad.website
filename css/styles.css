@@ -2,17 +2,160 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Scroll Progress Bar */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background: linear-gradient(90deg, #ffc56d, #ffaa3d);
+  z-index: 101;
+  transition: width 0.1s ease-out;
+  box-shadow: 0 0 10px rgba(255, 197, 109, 0.6);
+}
+
 header > img {
   width: 100%;
   max-width: 720px;
 }
 
+/* Hero Section Animations */
+header h1 {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 0.2s forwards;
+}
+
+header img {
+  opacity: 0;
+  animation: fadeInScale 1.2s ease-out 0.4s forwards;
+}
+
+header h3 {
+  opacity: 0;
+  animation: typeWriter 2s steps(40) 1.6s forwards, fadeIn 0.5s ease-out 1.6s forwards;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #ffc56d;
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes typeWriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: fit-content;
+    max-width: 100%;
+  }
+}
+
+/* Remove border after typing animation completes */
+@keyframes removeBorder {
+  to {
+    border-right: none;
+  }
+}
+
+header h3 {
+  animation: typeWriter 2s steps(40) 1.6s forwards, fadeIn 0.5s ease-out 1.6s forwards, removeBorder 0.1s 3.6s forwards;
+}
+
 body {
   font-family: Arial, sans-serif;
-  background-color: #1a1a1a;
+  background: #1a1a1a;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
   color: #f0f0f0;
   line-height: 1.6;
   padding-top: 4em;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Static Background Grid */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(90deg, rgba(255, 197, 109, 0.03) 1px, transparent 1px),
+    linear-gradient(rgba(255, 197, 109, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Floating Particles */
+#particles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #ffc56d;
+  border-radius: 50%;
+  opacity: 0;
+  animation: floatParticle 15s ease-in-out infinite;
+}
+
+@keyframes floatParticle {
+  0% {
+    transform: translateY(100vh) translateX(0) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100px) translateX(100px) scale(1);
+    opacity: 0;
+  }
 }
 
 h1, h2 {
@@ -65,11 +208,38 @@ section {
 a {
   color: #ffc56d;
   text-decoration: none;
-  transition: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Animated underline for regular links */
+main a:not(.service-btn),
+section a:not(.service-btn) {
+  display: inline-block;
+  position: relative;
+}
+
+main a:not(.service-btn)::after,
+section a:not(.service-btn)::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ffc56d;
+  transition: width 0.3s ease;
+}
+
+main a:not(.service-btn):hover::after,
+section a:not(.service-btn):hover::after,
+main a:not(.service-btn):focus-visible::after,
+section a:not(.service-btn):focus-visible::after {
+  width: 100%;
 }
 
 a:hover, a:focus-visible {
-  text-decoration: underline;
+  color: #ffaa3d;
 }
 
 li {
@@ -86,10 +256,43 @@ img {
   margin: 20px auto;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(255, 197, 109, 0.3);
 }
 
 .signature {
   box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+  opacity: 0;
+  animation: drawSignature 1.5s ease-out forwards;
+}
+
+.signature:nth-child(1) {
+  animation-delay: 2s;
+}
+
+.signature:nth-child(2) {
+  animation-delay: 2.3s;
+}
+
+.signature:nth-child(3) {
+  animation-delay: 2.6s;
+}
+
+@keyframes drawSignature {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
 }
 
 iframe {
@@ -120,6 +323,7 @@ table, th, td {
 footer {
   text-align: center;
   margin-top: 40px;
+  position: relative;
 }
 
 footer img {
@@ -130,6 +334,31 @@ footer img {
   margin: 20px auto;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: filter 0.3s ease;
+}
+
+footer img:hover {
+  filter: contrast(1.1) brightness(1.05);
+  animation: glitch 0.3s ease;
+}
+
+@keyframes glitch {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+}
+
+/* Audio player styling */
+footer audio {
+  margin: 20px auto;
+  display: block;
+  filter: sepia(100%) saturate(300%) brightness(70%) hue-rotate(15deg);
+}
+
+footer audio::-webkit-media-controls-panel {
+  background-color: #222;
 }
 
 hr {
@@ -164,6 +393,71 @@ code {
 
 }
 
+/* Service Cards Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 960px;
+    margin: 0 auto 2em auto;
+    padding: 0 1rem;
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    position: relative;
+}
+
+/* Tooltip on hover */
+.service-card[data-tooltip]:hover::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #222;
+    color: #ffc56d;
+    padding: 0.8em 1em;
+    border-radius: 8px;
+    font-size: 0.9em;
+    line-height: 1.4;
+    white-space: normal;
+    width: max-content;
+    max-width: 280px;
+    z-index: 1000;
+    border: 2px solid #ffc56d;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    animation: tooltipFadeIn 0.2s ease-out;
+    pointer-events: none;
+    text-align: center;
+}
+
+.service-card[data-tooltip]:hover::after {
+    content: '';
+    position: absolute;
+    bottom: calc(100% + 2px);
+    left: 50%;
+    transform: translateX(-50%);
+    border: 8px solid transparent;
+    border-top-color: #ffc56d;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+@keyframes tooltipFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
 .services-buttons {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -172,13 +466,13 @@ code {
     margin-bottom: 1em;
 }
 .service-btn {
-  width: 260px;
+  width: 100%;
   min-width: 180px;
   max-width: 320px;
     background: #222;
     color: #ffc56d;
     text-align: center;
-    padding: 1.2em 0;
+    padding: 1.2em 1em;
     border-radius: 8px;
     text-decoration: none;
     font-size: 1.1em;
@@ -190,17 +484,55 @@ code {
     box-sizing: border-box;
     margin: 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 0.3em;
+    min-height: 80px;
+}
+
+.service-name {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.service-desc {
+    font-size: 0.85em;
+    opacity: 0.8;
+    font-weight: normal;
+}
+
+/* Tutorial Link Styling */
+.tutorial-link {
+    display: inline-block;
+    font-size: 0.9em;
+    color: #ffc56d;
+    text-decoration: none;
+    padding: 0.4em 0.8em;
+    border-radius: 6px;
+    background: rgba(255, 197, 109, 0.1);
+    transition: background 0.3s ease, transform 0.2s ease;
+    border: 1px solid rgba(255, 197, 109, 0.3);
+}
+
+.tutorial-link:hover {
+    background: rgba(255, 197, 109, 0.2);
+    transform: translateY(-2px);
+    border-color: #ffc56d;
 }
 .service-btn:hover, .service-btn:focus {
     background: #ffc56d;
     color: #222;
     box-shadow: 0 8px 24px rgba(255,197,109,0.18), 0 2px 8px rgba(0,0,0,0.10);
     text-decoration: none;
-    transform: translateY(-4px) scale(1.04) rotate(-1deg);
+    transform: translateY(-4px) scale(1.04) rotateY(5deg) rotateX(5deg);
     filter: brightness(1.08) saturate(1.2) drop-shadow(0 0 8px #ffc56d44);
     outline: 2px solid #ffc56d;
+}
+
+.service-btn:active {
+    transform: translateY(-2px) scale(1.02);
+    transition: transform 0.1s ease;
 }
 
 /* Add a subtle animation for button appearance */
@@ -208,9 +540,19 @@ code {
     0% { opacity: 0; transform: scale(0.92) translateY(16px); }
     100% { opacity: 1; transform: scale(1) translateY(0); }
 }
+
 .service-btn {
-    animation: serviceBtnPopIn 0.5s cubic-bezier(.4,2,.6,1) both;
+    animation: serviceBtnPopIn 0.6s cubic-bezier(.4,2,.6,1) both;
+    perspective: 1000px;
 }
+
+.service-btn:nth-child(1) { animation-delay: 0.1s; }
+.service-btn:nth-child(2) { animation-delay: 0.2s; }
+.service-btn:nth-child(3) { animation-delay: 0.3s; }
+.service-btn:nth-child(4) { animation-delay: 0.4s; }
+.service-btn:nth-child(5) { animation-delay: 0.5s; }
+.service-btn:nth-child(6) { animation-delay: 0.6s; }
+.service-btn:nth-child(7) { animation-delay: 0.7s; }
 
 /* Ensure long labels don't change button height and allow centering specific buttons */
 .service-btn {
@@ -220,10 +562,13 @@ code {
   min-height: 56px;
 }
 
-/* Center a service button across the grid (used for Gigachad AI) */
-.center-service {
+/* Center a service card across the grid (used for Gigachad AI) */
+.service-card.center-service {
   grid-column: 1 / -1;
   justify-self: center;
+}
+
+.service-card.center-service .service-btn {
   max-width: 320px;
   width: 260px;
 }
@@ -255,17 +600,42 @@ code {
     border-radius: 12px;
     margin: 0 0.15em;
     text-decoration: none;
-    transition: background 0.2s, color 0.2s, transform 0.1s;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
     box-shadow: 0 2px 8px rgba(0,0,0,0.10);
     letter-spacing: 1px;
     cursor: pointer;
     display: inline-block;
+    position: relative;
+    overflow: hidden;
 }
+
+.nav-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(34, 34, 34, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.nav-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
 .nav-btn:hover, .nav-btn:focus {
     background: #222;
     color: #ffc56d;
     outline: 2px solid #ffc56d;
     transform: scale(1.07);
+}
+
+.nav-btn:active {
+    transform: scale(1.03);
 }
 
 @media screen and (hover:none) {
@@ -275,6 +645,9 @@ code {
 }
   
 @media screen and (max-width: 900px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
     .services-buttons {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -295,6 +668,9 @@ code {
     }
 }
 @media screen and (max-width: 600px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
     .services-buttons {
         grid-template-columns: 1fr;
     }
@@ -344,5 +720,75 @@ code {
     #site-search {
         display: none;
     }
+}
+
+/* Scroll-triggered animations */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Search animations */
+#search-results {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#search-results[style*="display: block"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#search-input {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#search-input:focus {
+  outline: none;
+  border-color: #ffaa3d !important;
+  box-shadow: 0 0 0 3px rgba(255, 197, 109, 0.2);
+}
+
+/* Coming Soon badge animation */
+.coming-soon-badge {
+  position: relative;
+}
+
+.coming-soon-badge::after {
+  content: 'NEW';
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ffc56d;
+  color: #222;
+  font-size: 0.7em;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: bold;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+/* Main and section relative positioning for z-index */
+main, section, header, footer {
+  position: relative;
+  z-index: 1;
 }
 

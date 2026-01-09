@@ -13,7 +13,6 @@
         <a class="nav-btn" href="#services">Services</a>
         <a class="nav-btn" href="#gameservers">Game Servers</a>
         <a class="nav-btn" href="#articles">Articles</a>
-        <a class="nav-btn" href="#tutorials">Tutorials</a>
         <form id="site-search" style="display:inline-block; margin-left:1em; position:relative;">
             <input type="text" id="search-input" placeholder="Search..." style="padding:0.4em 1em; border-radius:8px; border:1px solid #ffc56d; font-size:1em;">
             <div id="search-results" style="position:absolute; left:0; top:calc(100% + 4px); background:#222; color:#ffc56d; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.18); display:none; z-index:999; min-width:260px; width:100%;"></div>
@@ -39,74 +38,106 @@
             </div>
         </section>
         <hr>
-        <section id="service-explanations" style="margin-top:2em;">
-            <h2 style="color:#ffc56d;">What’s Available on the Gigachad Network?</h2>
-            <p style="max-width:800px; margin:0 auto 1em auto; font-size:1.1em;">
-            All services listed below are <strong>self-hosted</strong> by the Gigachad Network—your data stays private and under your control. All services are Ad-free and payment free. More information about each service can be found in Articles and Tutorials.
-            </p>
-            <ul style="max-width:800px; margin:0 auto; font-size:1.1em; line-height:1.7;">
-            <li><strong style="color:#ffc56d;">Jellyfin</strong>: Media streaming server for movies, TV shows, and Music. Your own private Netflix alternative.</li>
-            <li><strong style="color:#ffc56d;">Jellyseer</strong>: Easy content requests for Jellyfin. Use your Jellyfin login to access.</li>
-            <li><strong style="color:#ffc56d;">Vaultwarden (coming soon)</strong>: Password manager. Securely store and manage your passwords.</li>
-            <li><strong style="color:#ffc56d;">VPN</strong>: Secure VPN access using WireGuard. Protect your privacy and access your home network from anywhere.</li>
-            <li><strong style="color:#ffc56d;">NextCloud</strong>: Personal cloud storage. Sync and share files, calendars, and contacts across your devices.</li>
-            <li><strong style="color:#ffc56d;">AudiobookShelf</strong>: Audiobook and podcast streaming. Listen to your audiobooks and podcasts anywhere.</li>
-            <li><strong style="color:#ffc56d;">Gigachad AI</strong>: AI chat and tools. Powerful AI features for productivity and fun.</li>
-            <li><strong style="color:#ffc56d;">Our Own Game Servers</strong>: Play on some of our own private servers. Including Minecraft, Factorio, and Valheim</li>
-            <li><strong style="color:#ffc56d;">Server Hosting (Toast Host)</strong>: Start your own game server with Toast Host. Easy, fast, and reliable game server hosting.</li>
-               <div style="display: flex; justify-content: center; margin: 2em 0 1em 0;"></div> 
-        </ul>
-        <hr>
-        </section>
         <section id="services">
-            <h2>Services</h2>
-            <div class="services-buttons" style="display:grid; grid-template-columns:repeat(3, minmax(160px,1fr)); gap:1rem; justify-items:center; align-items:center; max-width:960px; margin:0 auto;">
-                <a class="service-btn" href="http://watch.gigachad.website" title="Media streaming server">Jellyfin</a>
-                <a class="service-btn" href="http://seer.gigachad.website" title="Jellyseer - analytics for Jellyfin">Jellyseer</a>
-                <a class="service-btn" href="vpn.html" title="Secure VPN access">VPN</a>
-                <a class="service-btn" href="https://cloud.gigachad.website" title="Personal cloud storage">NextCloud</a>
-                <a class="service-btn" href="http://listen.gigachad.website" title="Audiobook streaming">AudiobookShelf</a>
-                <a class="service-btn" href="https://toast-host.com" title="Start your own game server from Toast Host">Server Hosting (Toast Host)</a>
-                <a class="service-btn center-service" href="http://ai.gigachad.website" title="AI Chat">Gigachad AI</a>
+            <h2 style="color:#ffc56d;">Gigachad Network Services</h2>
+            <p style="max-width:900px; margin:0 auto 2em auto; font-size:1.05em; text-indent:0; text-align:center;">
+            All services are <strong>self-hosted</strong>—your data stays private and under your control. Ad-free and payment free. Click any service to launch it, or view the tutorial for setup instructions.
+            </p>
+            <div class="services-grid">
+                <!-- Jellyfin -->
+                <div class="service-card" data-tooltip="Media streaming server for movies, TV shows, and music. Your own private Netflix alternative.">
+                    <a class="service-btn" href="http://watch.gigachad.website" title="Open Jellyfin">
+                        <span class="service-name">Jellyfin</span>
+                        <span class="service-desc">Media Streaming</span>
+                    </a>
+                    <a class="tutorial-link" href="tutorials/jellyfin.html" title="Setup Tutorial">📖 Tutorial</a>
+                </div>
+
+                <!-- Jellyseer -->
+                <div class="service-card" data-tooltip="Easy content requests for Jellyfin. Use your Jellyfin login to access.">
+                    <a class="service-btn" href="http://seer.gigachad.website" title="Open Jellyseer">
+                        <span class="service-name">Jellyseer</span>
+                        <span class="service-desc">Content Requests</span>
+                    </a>
+                </div>
+
+                <!-- VPN -->
+                <div class="service-card" data-tooltip="Secure VPN access using WireGuard. Protect your privacy and access your home network from anywhere.">
+                    <a class="service-btn" href="vpn.html" title="VPN Setup">
+                        <span class="service-name">VPN</span>
+                        <span class="service-desc">WireGuard Access</span>
+                    </a>
+                    <a class="tutorial-link" href="vpn.html" title="Setup Tutorial">📖 Tutorial</a>
+                </div>
+
+                <!-- NextCloud -->
+                <div class="service-card" data-tooltip="Personal cloud storage. Sync and share files, calendars, and contacts across your devices.">
+                    <a class="service-btn" href="https://cloud.gigachad.website" title="Open NextCloud">
+                        <span class="service-name">NextCloud</span>
+                        <span class="service-desc">Cloud Storage</span>
+                    </a>
+                </div>
+
+                <!-- AudiobookShelf -->
+                <div class="service-card" data-tooltip="Audiobook and podcast streaming. Listen to your audiobooks and podcasts anywhere.">
+                    <a class="service-btn" href="http://listen.gigachad.website" title="Open AudiobookShelf">
+                        <span class="service-name">AudiobookShelf</span>
+                        <span class="service-desc">Audiobooks & Podcasts</span>
+                    </a>
+                    <a class="tutorial-link" href="tutorials/audiobook.html" title="Setup Tutorial">📖 Tutorial</a>
+                </div>
+
+                <!-- Toast Host -->
+                <div class="service-card" data-tooltip="Start your own game server with Toast Host. Easy, fast, and reliable game server hosting.">
+                    <a class="service-btn" href="https://toast-host.com" title="Visit Toast Host">
+                        <span class="service-name">Toast Host</span>
+                        <span class="service-desc">Game Server Hosting</span>
+                    </a>
+                    <a class="tutorial-link" href="tutorials/toast-host.html" title="Setup Tutorial">📖 Tutorial</a>
+                </div>
+
+                <!-- Gigachad AI - Full Width -->
+                <div class="service-card center-service" data-tooltip="AI chat and tools. Powerful AI features for productivity and fun.">
+                    <a class="service-btn" href="http://ai.gigachad.website" title="Open Gigachad AI">
+                        <span class="service-name">Gigachad AI</span>
+                        <span class="service-desc">AI Chat & Tools</span>
+                    </a>
+                </div>
             </div>
-        </section>
 
             <h2 style="margin-top:2em; text-align:center;">Coming Soon</h2>
-            <div class="services-buttons" style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap; align-items:center;">
-                <a class="service-btn" href="http://gigachad.website:30032" title="Password manager">Vaultwarden</a>
+            <div class="services-grid" style="justify-content:center;">
+                <div class="service-card" data-tooltip="Password manager. Securely store and manage your passwords.">
+                    <a class="service-btn" href="http://gigachad.website:30032" title="Password Manager">
+                        <span class="service-name">Vaultwarden</span>
+                        <span class="service-desc">Password Manager</span>
+                    </a>
+                </div>
             </div>
+
+            <p style="max-width:800px; margin:2em auto 1em auto; font-size:0.95em; text-indent:0; text-align:center; opacity:0.8;">
+                Also check out our <a href="#gameservers">Game Servers</a> including Minecraft, Factorio, and Valheim!
+            </p>
         </section>
         <hr>
         <section id="gameservers">
             <h2>Game Servers</h2>
-                <h3><a href="create.html" title="Join our Create Minecraft server">Create Minecraft Server</a></h3>
-                <h3><a href="minecraft.html" title="Join our Vanilla Minecraft server">Vanilla Minecraft Server</a></h3>
-                <h3><a href="abyssal-ascent.html" title="Play on our Abyssal Ascent Minecraft server">Minecraft Abyssal Ascent Server</a></h3>
-                <h3><a href="valheim.html" title="Join our Valheim server">Valheim Server</a></h3>
-                <h3><a href="factorio.html" title="Play Factorio Space Age with us">Factorio Space Age</a></h3>
-                <div style="display: flex; justify-content: center; margin: 2em 0 1em 0;"></div>
+            <h3><a href="create.html" title="Join our Create Minecraft server">Create Minecraft Server</a></h3>
+            <h3><a href="minecraft.html" title="Join our Vanilla Minecraft server">Vanilla Minecraft Server</a></h3>
+            <h3><a href="abyssal-ascent.html" title="Play on our Abyssal Ascent Minecraft server">Minecraft Abyssal Ascent Server</a></h3>
+            <h3><a href="valheim.html" title="Join our Valheim server">Valheim Server</a></h3>
+            <h3><a href="factorio.html" title="Play Factorio Space Age with us">Factorio Space Age</a></h3>
         </section>
         <hr>
         <section id="articles">
             <h2>Articles</h2>
-                <h3><a href="https://rentry.org/bypass-cgnat-like-a-chad">Bypass CGNAT Like a Chad</a></h3>  
-                <h3><a href="under-construction.html">Harden Your Network With Wazuh</a></h3>
-                <h3><a href="under-construction.html">Escape Any Network With DNS Tunneling</a></h3>
-                <h3><a href="https://date.gigachad.website">The Dating Guide</a></h3>
-                <h3><a href="Torrenting.html">How to Pirate Like a Chad</a></h3>
-                <h3><a href="https://www.privacyguides.org">Secure your Digital Life</a></h3>
-                <h3><a href="https://www.reddit.com/r/degoogle/comments/bsa6al/getting_started_why_you_should_degoogle">Degoogle your Life</a></h3>
-            </h3><!-- degoogle link is temporary, will be replaced with our own article soon -->
-            <div style="display: flex; justify-content: center; margin: 2em 0 1em 0;"></div>
-        </section>
-        <hr>
-        <section id="tutorials">
-            <h2>Tutorials</h2>
-                <h3><a href="tutorials/toast-host.html">Toast Host Game Server Hosting</a></h3>
-                <h3><a href="tutorials/jellyfin.html">Setting up Jellyfin</a></h3>
-                <h3><a href="tutorials/audiobook.html">Setting up AudioBookShelf</a></h3>
-                <h3><a href="vpn.html">Setting up WireGuard</a></h3>
-                <div style="display: flex; justify-content: center; margin: 2em 0 1em 0;"></div>
+            <h3><a href="Torrenting.html">How to Torrent Like a Chad</a></h3>
+            <h3><a href="https://rentry.org/bypass-cgnat-like-a-chad" target="_blank">Bypass CGNAT Like a Chad</a></h3>
+            <h3><a href="under-construction.html">Harden Your Network With Wazuh</a></h3>
+            <h3><a href="under-construction.html">Escape Any Network With DNS Tunneling</a></h3>
+            <h3><a href="https://www.wikihow.com/Date" target="_blank">The Dating Guide</a></h3>
+            <h3><a href="https://www.privacyguides.org" target="_blank">Secure your Digital Life</a></h3>
+            <h3><a href="https://www.reddit.com/r/degoogle/comments/bsa6al/getting_started_why_you_should_degoogle" target="_blank">Degoogle your Life</a></h3>
         </section>
         <hr>
         <section id="contact">
@@ -129,8 +160,9 @@
             <source src="files/can-you-feel-my-heart.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
-        <p>&copy; 2025 Gigachad Network. All rights reserved.</p>
+        <p>&copy; 2026 Gigachad Network. All rights reserved.</p>
     </footer>
     <script src="js/search.js"></script>
+    <script src="js/animations.js"></script>
 </body>
 </html>
