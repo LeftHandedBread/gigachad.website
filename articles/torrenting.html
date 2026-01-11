@@ -32,8 +32,8 @@
         <hr>
 
         <section id="vpn">
-            <h2>Step 1: Get a Privacy-Focused VPN (Required for Safety)</h2>
-            <p>When torrenting, your IP address is visible to other peers unless you use a VPN. This is the single most important step.</p>
+            <h2>Step 1: Get a Privacy-Focused VPN (Highly Recommended)</h2>
+            <p>When torrenting, your ISP can monitor your activity and identify copyrighted content. Your ISP can report you to copyright holders, who may issue DMCA notices or legal threats. While a VPN is not technically required to torrent, it's highly recommended for privacy and protection.</p>
 
             <h3>Recommended VPNs</h3>
             <ul>
@@ -41,16 +41,12 @@
                 <li><strong><a href="https://mullvad.net" target="_blank">Mullvad</a></strong> – No personal info required, accepts crypto, excellent for torrenting</li>
             </ul>
 
-            <h3>Essential VPN Features</h3>
-            <ul>
-                <li>✅ No-logs policy</li>
-                <li>✅ Supports P2P traffic</li>
-                <li>✅ Kill switch functionality</li>
-                <li>✅ WireGuard or OpenVPN protocol support</li>
-            </ul>
+            <p style="background: rgba(255,197,109,0.1); padding: 1em; border-left: 4px solid #ffc56d; border-radius: 4px;">
+                <strong>Critical:</strong> If using a VPN, turn it on <strong>before</strong> opening your torrent client. Make sure it's connected and active.
+            </p>
 
             <p style="background: rgba(255,197,109,0.1); padding: 1em; border-left: 4px solid #ffc56d; border-radius: 4px;">
-                <strong>Critical:</strong> Turn on the VPN <strong>before</strong> opening your torrent client. Make sure it's connected and active.
+                <strong>Torrenting Without a VPN:</strong> If you choose to torrent without a VPN, minimize your seeding time. Close your torrent client immediately after downloads complete, or pause torrents when finished downloading. The more you seed, the more exposure you have to monitoring.
             </p>
         </section>
         <hr>
@@ -62,11 +58,10 @@
             <h3>Recommended Client</h3>
             <p><strong><a href="https://www.qbittorrent.org/" target="_blank">qBittorrent</a></strong></p>
             <ul>
-                <li>✅ Open source and actively maintained</li>
-                <li>✅ No ads or bundled malware</li>
-                <li>✅ Lightweight and efficient</li>
-                <li>✅ Excellent VPN binding support</li>
-                <li>✅ Built-in search engine for trackers</li>
+                <li>Open source and actively maintained</li>
+                <li>No ads or bundled malware</li>
+                <li>Lightweight and efficient</li>
+                <li>Built-in search engine for trackers</li>
             </ul>
 
             <p><strong>Avoid:</strong> uTorrent (now contains ads and crypto miners), BitTorrent client (same ownership as uTorrent)</p>
@@ -74,23 +69,12 @@
         <hr>
 
         <section id="bind-vpn">
-            <h2>Step 3: Bind the VPN to Your Torrent Client (Critical Step)</h2>
-            <p>Using a VPN alone is <strong>not enough</strong>. If the VPN disconnects, your real IP could leak unless you bind it to your torrent client. This is one of the most important safety measures.</p>
+            <h2>Step 3: Bind VPN to qBittorrent</h2>
+            <p>If using a VPN, bind it to qBittorrent to prevent IP leaks if the VPN disconnects.</p>
 
-            <h3>How to Bind VPN to qBittorrent</h3>
-            <ol>
-                <li>Open <strong>qBittorrent</strong></li>
-                <li>Go to <strong>Tools → Options → Advanced</strong></li>
-                <li>Find <strong>Network Interface</strong></li>
-                <li>Select your VPN interface from the dropdown (e.g., <code>wg-mullvad</code>, <code>tun0</code>, <code>ProtonVPN</code>)</li>
-                <li>Click <strong>Apply</strong> and restart qBittorrent</li>
-            </ol>
+            <p><strong>Steps:</strong> Open qBittorrent → Tools → Options → Advanced → Network Interface → Select your VPN (e.g., <code>wg-mullvad</code>, <code>protonvpn</code>) → Apply and restart.</p>
 
-            <p style="background: rgba(109,255,197,0.1); padding: 1em; border-left: 4px solid #6dffc5; border-radius: 4px;">
-                <strong>Result:</strong> qBittorrent will <strong>only work when the VPN is active</strong>. If the VPN drops, torrents stop automatically. This is one of the safest torrenting setups possible.
-            </p>
-
-            <h3>Video Tutorial: Binding VPN to qBittorrent</h3>
+            <h3>Video Tutorial</h3>
             <video controls preload="metadata">
                 <source src="/files/videos/binding vpn.mp4" type="video/mp4">
                 Your browser does not support the video element.
@@ -99,69 +83,34 @@
         <hr>
 
         <section id="trackers">
-            <h2>Step 4: Use Reputable Torrent Trackers</h2>
-            <p>Trackers index torrents. Poorly moderated sites are more likely to host fake or malicious files.</p>
+            <h2>Step 4: Find Torrents Safely</h2>
+
+            <h3>What is a Torrent Tracker?</h3>
+            <p>A torrent tracker is a website that indexes torrent files and magnet links. Think of it as a search engine for torrents - you search for the content you want, and the tracker provides a .torrent file or magnet link that your torrent client uses to download the actual content from other users (peers) sharing it.</p>
 
             <p style="background: rgba(255,197,109,0.1); padding: 1em; border-left: 4px solid #ffc56d; border-radius: 4px;">
-                <strong>Critical:</strong> Torrent tracker sites are often filled with intrusive ads and pop-ups. A <strong>strong adblocker is required</strong> for safe browsing.
+                <strong>Use an adblocker:</strong> Torrent tracker sites are often filled with aggressive ads and pop-ups. Use <a href="https://brave.com/" target="_blank">Brave Browser</a> or <a href="https://www.mozilla.org/firefox/" target="_blank">Firefox</a> + <a href="https://ublockorigin.com/" target="_blank">uBlock Origin</a> to block them.
             </p>
 
-            <h3>Recommended Browsers with Ad Blocking</h3>
-            <p>Use a privacy-focused browser with built-in ad blocking or install a powerful ad blocker:</p>
-            <ul>
-                <li><strong><a href="https://brave.com/" target="_blank">Brave Browser</a></strong> – Built-in ad blocker and privacy features (Recommended)</li>
-                <li><strong><a href="https://www.mozilla.org/firefox/" target="_blank">Firefox</a></strong> + <strong><a href="https://ublockorigin.com/" target="_blank">uBlock Origin</a></strong> – Highly customizable with excellent ad blocking</li>
-            </ul>
+            <h3>Recommended Trackers</h3>
+            <p><a href="https://1337x.to" target="_blank">1337x.to</a> - General purpose tracker with movies, TV, software, games, and more</p>
+            <p><a href="https://nyaa.si/" target="_blank">nyaa.si</a> - Specialized tracker for anime, manga, and Asian media</p>
 
-            <h3>Recommended Public Trackers</h3>
-            <p><strong>Important:</strong> Only visit these sites with your VPN active and ad blocker enabled.</p>
+            <h3>Safety Tips</h3>
             <ul>
-                <li><strong><a href="https://1337x.to" target="_blank">1337x.to</a></strong> – General purpose torrents, well-moderated</li>
-                <li><strong><a href="https://nyaa.si/" target="_blank">nyaa.si</a></strong> – Anime, manga, and Japanese media</li>
-                <li><strong><a href="https://rutracker.org/" target="_blank">RuTracker</a></strong> – Large Russian tracker with account required (private-style moderation)</li>
-            </ul>
-
-            <h3>Safety Tips When Choosing Torrents</h3>
-            <ul>
-                <li>✅ Prefer torrents with comments and many seeders</li>
-                <li>✅ Stick to known uploaders with verified badges</li>
-                <li>✅ Avoid brand-new torrents with no feedback</li>
-                <li>✅ Check file sizes – if a 4K movie is 50MB, it's fake</li>
-                <li>✅ Read comments before downloading</li>
-                <li>✅ Never disable your ad blocker on tracker sites</li>
+                <li>Prefer torrents with many seeders and positive comments</li>
+                <li>Stick to verified or trusted uploaders (usually marked with badges)</li>
+                <li>Avoid brand-new torrents without any feedback or comments</li>
+                <li>Check file sizes - if a 4K movie is only 50MB, it's fake or malware</li>
             </ul>
         </section>
         <hr>
 
         <section id="downloading">
-            <h2>Step 5: Download Torrents Using Magnet Links</h2>
-            <p>Once you've found a torrent you want to download, you'll need to add it to qBittorrent using a magnet link or torrent file.</p>
+            <h2>Step 5: Add Torrents to qBittorrent</h2>
+            <p>Click the <strong>Magnet</strong> button on a tracker, and your browser will open it with qBittorrent. Alternatively, download the <code>.torrent</code> file and open it with qBittorrent.</p>
 
-            <h3>What is a Magnet Link?</h3>
-            <p>A magnet link is a URI (web address) that contains the torrent's info hash. It allows you to download without needing a separate .torrent file. Magnet links start with <code>magnet:?</code></p>
-
-            <h3>How to Download a Torrent</h3>
-            <ol>
-                <li>On the tracker site, find the torrent you want</li>
-                <li>Look for a <strong>Magnet</strong> icon or button (🧲) and click it</li>
-                <li>Your browser should prompt you to open the link with qBittorrent</li>
-                <li>Alternatively, copy the magnet link and paste it into qBittorrent (<strong>File → Add Torrent Link</strong>)</li>
-                <li>Choose where to save the files and click <strong>OK</strong></li>
-            </ol>
-
-            <h3>Alternative: Download .torrent File</h3>
-            <p>If magnet links aren't working, you can download a <code>.torrent</code> file:</p>
-            <ol>
-                <li>Click the <strong>Download</strong> or <strong>.torrent</strong> button on the tracker</li>
-                <li>Save the <code>.torrent</code> file to your computer</li>
-                <li>Open the file with qBittorrent or drag it into qBittorrent</li>
-            </ol>
-
-            <p style="background: rgba(255,197,109,0.1); padding: 1em; border-left: 4px solid #ffc56d; border-radius: 4px;">
-                <strong>Important:</strong> Make sure your VPN is active before clicking any magnet links or adding torrents to qBittorrent. Your IP becomes visible to peers the moment you start downloading.
-            </p>
-
-            <h3>Video Tutorial: Adding Torrents to qBittorrent</h3>
+            <h3>Video Tutorial</h3>
             <video controls preload="metadata">
                 <source src="/files/videos/Adding torrents into qbittorrent.mp4" type="video/mp4">
                 Your browser does not support the video element.
@@ -169,83 +118,10 @@
         </section>
         <hr>
 
-        <section id="malware">
-            <h2>Step 6: Watch for Malware and Fake Files</h2>
-            <p>Malicious actors often disguise malware as popular torrents. Stay vigilant.</p>
-
-            <h3>Red Flags to Avoid</h3>
-            <ul>
-                <li>❌ <code>.exe</code>, <code>.bat</code>, <code>.scr</code> files (especially for movies or music)</li>
-                <li>❌ "Installers" for media files that should be standalone</li>
-                <li>❌ Password-protected archives without clear explanation</li>
-                <li>❌ Torrents requiring you to install additional software to "verify" or "unlock"</li>
-            </ul>
-
-            <h3>Legitimate File Extensions</h3>
-            <p><strong>Video:</strong> <code>.mkv</code>, <code>.mp4</code>, <code>.avi</code>, <code>.mov</code></p>
-            <p><strong>Audio:</strong> <code>.flac</code>, <code>.mp3</code>, <code>.m4a</code>, <code>.ogg</code></p>
-            <p><strong>Images:</strong> <code>.jpg</code>, <code>.png</code>, <code>.webp</code></p>
-
+        <section id="safety-disclaimer">
+            <h2>Safety Disclaimer</h2>
             <p style="background: rgba(255,197,109,0.1); padding: 1em; border-left: 4px solid #ffc56d; border-radius: 4px;">
-                <strong>Pro Tip:</strong> If you're downloading software or games, research the uploader first. Scan files with antivirus if you're unsure.
-            </p>
-        </section>
-        <hr>
-
-        <section id="qbittorrent-settings">
-            <h2>Step 7: Configure qBittorrent for Maximum Safety</h2>
-
-            <h3>Recommended Settings</h3>
-            <p>Open <strong>qBittorrent → Tools → Options</strong></p>
-
-            <h4>Connection Settings</h4>
-            <ul>
-                <li>✅ Enable <strong>Protocol Encryption</strong> (set to "Prefer" or "Require")</li>
-                <li>✅ Disable <strong>UPnP / NAT-PMP</strong> unless you specifically need it</li>
-            </ul>
-
-            <h4>BitTorrent Settings</h4>
-            <ul>
-                <li>✅ Keep <strong>DHT</strong> and <strong>PEX</strong> enabled (unless using private trackers)</li>
-                <li>✅ Enable <strong>Anonymous mode</strong> to reduce information leakage</li>
-            </ul>
-
-            <h4>Advanced Settings</h4>
-            <ul>
-                <li>✅ Set <strong>Network Interface</strong> to your VPN (see Step 3)</li>
-                <li>✅ Consider setting reasonable upload/download limits</li>
-            </ul>
-        </section>
-        <hr>
-
-        <section id="updates">
-            <h2>Step 8: Keep Everything Updated</h2>
-            <p>Outdated software often contains security vulnerabilities that can be exploited.</p>
-
-            <h3>Update Regularly</h3>
-            <ul>
-                <li>✅ VPN client software</li>
-                <li>✅ qBittorrent torrent client</li>
-                <li>✅ Operating system and security patches</li>
-                <li>✅ Antivirus/antimalware software</li>
-            </ul>
-        </section>
-        <hr>
-
-        <section id="legal">
-            <h2>Step 9: Understand the Legal Risks</h2>
-            <p>A VPN improves privacy and security, but it does <strong>not</strong> guarantee immunity from legal consequences. Laws vary widely by country and jurisdiction.</p>
-
-            <h3>Important Considerations</h3>
-            <ul>
-                <li>⚠️ Copyright laws differ between countries</li>
-                <li>⚠️ Some jurisdictions have stricter enforcement than others</li>
-                <li>⚠️ ISPs may still monitor traffic patterns (though not content with VPN)</li>
-                <li>⚠️ Always research local laws before torrenting</li>
-            </ul>
-
-            <p style="background: rgba(255,197,109,0.1); padding: 1em; border-left: 4px solid #ffc56d; border-radius: 4px;">
-                <strong>Remember:</strong> This guide focuses on privacy and security best practices. You are responsible for complying with applicable laws in your area.
+                <strong>Important:</strong> Torrenting, especially piracy, comes with risks. Downloaded files may contain malware, viruses, or other harmful content. Download at your own risk. You can use tools like <a href="https://www.virustotal.com/" target="_blank">VirusTotal</a> to scan downloaded files before opening them - simply upload the file to VirusTotal and it will scan it with multiple antivirus engines.
             </p>
         </section>
         <hr>
@@ -254,12 +130,12 @@
             <h2>Key Takeaway</h2>
             <p>Safe torrenting comes down to:</p>
             <ul style="font-size: 1.1em;">
-                <li>✅ A <strong>reputable VPN with no-logs policy</strong></li>
-                <li>✅ Using <strong>qBittorrent as your torrent client</strong></li>
-                <li>✅ <strong>Binding the VPN to qBittorrent</strong> to prevent IP leaks</li>
-                <li>✅ Using <strong>trusted trackers and verified uploaders</strong></li>
-                <li>✅ Practicing <strong>basic file-verification habits</strong></li>
-                <li>✅ Keeping all <strong>software updated</strong></li>
+                <li>A <strong>reputable VPN with no-logs policy</strong></li>
+                <li>Using <strong>qBittorrent as your torrent client</strong></li>
+                <li><strong>Binding the VPN to qBittorrent</strong> to prevent IP leaks</li>
+                <li>Using <strong>trusted trackers and verified uploaders</strong></li>
+                <li>Practicing <strong>basic file-verification habits</strong></li>
+                <li>Keeping all <strong>software updated</strong></li>
             </ul>
 
             <p>Follow these steps, and you'll be torrenting like a Gigachad.</p>
