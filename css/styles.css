@@ -860,3 +860,130 @@ video {
   margin: 1em auto;
 }
 
+/* Game Server Tabs */
+.game-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #333;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.game-tab {
+  background: transparent;
+  border: none;
+  color: #888;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  position: relative;
+  min-width: 140px;
+}
+
+.game-tab:hover {
+  color: #ffc56d;
+  background: rgba(255, 197, 109, 0.05);
+}
+
+.game-tab.active {
+  color: #ffc56d;
+  border-bottom-color: #ffc56d;
+}
+
+.game-tab .tab-title {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.game-tab .tab-subtitle {
+  font-size: 0.75em;
+  opacity: 0.8;
+  white-space: nowrap;
+}
+
+.tab-content-container {
+  position: relative;
+  min-height: 400px;
+}
+
+.tab-content {
+  display: none;
+  animation: fadeInTab 0.4s ease-in-out;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-content .loading-text {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  padding: 2rem;
+}
+
+@keyframes fadeInTab {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablet adjustments for tabs */
+@media screen and (max-width: 900px) {
+  .game-tabs {
+    gap: 0.5rem;
+  }
+
+  .game-tab {
+    padding: 0.8rem 1rem;
+    min-width: 120px;
+  }
+
+  .game-tab .tab-title {
+    font-size: 1em;
+  }
+
+  .game-tab .tab-subtitle {
+    font-size: 0.7em;
+  }
+}
+
+/* Mobile adjustments for tabs */
+@media screen and (max-width: 600px) {
+  .game-tabs {
+    flex-direction: column;
+    gap: 0.5rem;
+    border-bottom: none;
+  }
+
+  .game-tab {
+    width: 100%;
+    border-bottom: 2px solid #333;
+    border-left: 3px solid transparent;
+    padding: 1rem;
+    align-items: flex-start;
+  }
+
+  .game-tab.active {
+    border-bottom-color: #333;
+    border-left-color: #ffc56d;
+    background: rgba(255, 197, 109, 0.08);
+  }
+
+  .tab-content-container {
+    min-height: 300px;
+  }
+}
+
