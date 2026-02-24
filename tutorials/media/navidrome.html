@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Complete guide to setting up Navidrome music streaming server. Stream your personal music collection anywhere with this self-hosted solution.">
+    <meta name="description" content="Tutorial for setting up Navidrome - your personal self-hosted music streaming server. Learn how to connect with apps and stream your music library.">
     <link rel="icon" href="/img/favicon.png" type="image/png">
     <title>Gigachad Network - Navidrome</title>
     <link rel="stylesheet" href="/css/styles.css">
@@ -18,7 +18,7 @@
     </nav>
     <header>
         <h1><a href="/index.html">The Gigachad Network</a></h1>
-        <img src="/img/gigachad-1.jpg" width="720">
+        <img src="/img/Gigachad-with-headphones.png" width="720">
         <h3>Setting up Navidrome</h3>
     </header>
     <hr>
@@ -26,24 +26,60 @@
     <main>
         <section id="about">
             <h2>What is Navidrome?</h2>
-            <p>Navidrome is a self-hosted music server that lets you stream your music collection to any device, anywhere. It supports multiple users, playlists, and works with a variety of Subsonic-compatible apps. This tutorial will guide you through connecting to Navidrome and enjoying your music library.</p>
+            <p>Navidrome is a self-hosted music server that lets you stream your personal music library to your phone, tablet, and computer. It supports multiple users, playlists, and Subsonic-compatible apps. This tutorial will help you connect and start listening.</p>
         </section>
         <hr>
-        <section id="template">
-            <h3>Step 1: Choose a Music App</h3>
-            <p>
-                Navidrome works with many Subsonic-compatible apps. Here are some popular options:<br>
-                • <a href="https://play.google.com/store/apps/details?id=com.ghenry22.substream2&hl=en-US" target="_blank">SubStreamer (Android)</a><br>
-                • <a href="https://f-droid.org/en/packages/com.cappielloantonio.notquitemy.tempo" target="_blank">Tempo (F-Droid)</a><br>
-                • <a href="https://apps.apple.com/us/app/substreamer/id1012991665" target="_blank">SubStreamer (iOS)</a><br>
-                • <a href="https://apps.apple.com/us/app/amperfy-music/id1530145038" target="_blank">Amperfy Music (iOS)</a><br>
-                • Or use the Navidrome Web Player directly in your browser (address provided by administrators).
+        <section id="setup">
+            <h2>Quick Setup Guide</h2>
+
+            <h3>Step 1: Choose Your Access Method</h3>
+            <p><strong>Option A: Mobile/Desktop Apps (Subsonic-compatible)</strong></p>
+            <p>Popular apps that work with Navidrome:</p>
+            <ul>
+                <li><strong>iOS:</strong> <a href="https://apps.apple.com/us/app/amperfy-music/id1530145038" target="_blank">Amperfy</a></li>
+                <li><strong>iOS:</strong> <a href="https://apps.apple.com/us/app/substreamer/id1012991665" target="_blank">SubStreamer</a></li>
+                <li><strong>Android:</strong> <a href="https://play.google.com/store/apps/details?id=com.ghenry22.substream2" target="_blank">SubStreamer</a></li>
+                <li><strong>Android (F-Droid):</strong> <a href="https://f-droid.org/en/packages/com.cappielloantonio.notquitemy.tempo" target="_blank">Tempo</a></li>
+            </ul>
+
+            <p><strong>Option B: Web Browser</strong></p>
+            <p>Visit <a href="http://gigachad.website:30043" target="_blank">gigachad.website:30043</a> directly—no app needed.</p>
+
+            <h3>Step 2: Connect to the Server</h3>
+            <p><strong>In the app:</strong></p>
+            <ol>
+                <li>Open your Subsonic-compatible app</li>
+                <li>Add a new server/account</li>
+                <li>Enter the server URL: <code>http://gigachad.website:30043</code></li>
+                <li>If asked for server type, choose <strong>Subsonic</strong></li>
+                <li>Log in with your account credentials</li>
+            </ol>
+
+            <p><strong>In a web browser:</strong></p>
+            <ol>
+                <li>Visit <a href="http://gigachad.website:30043" target="_blank">gigachad.website:30043</a></li>
+                <li>Log in with your account credentials</li>
+            </ol>
+
+            <p style="background: rgba(255,197,109,0.1); padding: 1em; border-left: 4px solid #ffc56d; border-radius: 4px;">
+                <strong>Don't have an account?</strong> Contact the server administrators to create one for you.
             </p>
-            <h3>Step 2: App Login</h3>
-            <p>Open your chosen app and enter the server address provided to you. For iOS you may need to pick your server type, choose the Subsonic option. Use the account details provided to you.</p>
-            <p>If you don't have an account or need the server address, please contact the server administrators.</p>
-            <h3>Step 3: Enjoy Your Music</h3>
-            <p>You can now stream your music collection from any device or web browser. If you have any problems, questions, or music requests, contact <strong>Ben_bone_</strong> on Discord or through our support email <a href="mailto:v4bkmt0jv@mozmail.com">v4bkmt0jv@mozmail.com</a>.</p>
+
+            <h3>Step 3: Browse & Listen</h3>
+            <p>Once logged in, you can:</p>
+            <ul>
+                <li>Browse your library by artist, album, genre, and songs</li>
+                <li>Create and manage playlists</li>
+                <li>Search your library quickly from any device</li>
+                <li>Stream in multiple formats (MP3/FLAC and more)</li>
+            </ul>
+
+            <h3>Need Help?</h3>
+            <p>For problems, questions, or music requests, reach out:</p>
+            <ul>
+                <li><strong>Discord:</strong> Contact <strong>@ben_bone_</strong></li>
+                <li><strong>Email:</strong> <a href="mailto:v4bkmt0jv@mozmail.com">v4bkmt0jv@mozmail.com</a></li>
+            </ul>
         </section>
     </main>
     <hr>

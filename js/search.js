@@ -39,7 +39,7 @@ const searchIndex = [
     },
     {
         title: "Vaultwarden",
-        url: "http://gigachad.website:30032",
+        url: "services/vaultwarden.html",
         desc: "Password manager",
         type: "service",
         keywords: ["password", "passwords", "vault", "security", "login", "credentials", "safe", "manager", "bitwarden", "vaultwarden"]
@@ -92,6 +92,13 @@ const searchIndex = [
         desc: "Music streaming server",
         type: "service",
         keywords: ["music", "audio", "stream", "streaming", "songs", "albums", "artist", "artists", "playlist", "playlists", "mp3", "flac", "jukebox", "subsonic", "navidrome", "spotify"]
+    },
+    {
+        title: "Setting up Navidrome",
+        url: "tutorials/media/navidrome.html",
+        desc: "Tutorial for Navidrome music server",
+        type: "tutorial",
+        keywords: ["music", "audio", "stream", "streaming", "songs", "albums", "artist", "artists", "playlist", "playlists", "mp3", "flac", "subsonic", "navidrome", "setup", "tutorial", "install"]
     },
     // --- GAME SERVERS ---
     {
