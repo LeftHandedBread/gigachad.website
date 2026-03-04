@@ -689,13 +689,6 @@ code {
     header img {
         max-width: 90%;
     }
-    #site-search {
-        width: 100%;
-        margin: 0.5em 0 !important;
-    }
-    #search-input {
-        width: 100% !important;
-    }
 }
 /* Mobile Styles */
 @media screen and (max-width: 600px) {
@@ -759,16 +752,6 @@ code {
         margin: 0.1em;
     }
 
-    #site-search {
-        width: 100%;
-        margin: 0.5em 0 !important;
-    }
-
-    #search-input {
-        width: calc(100% - 2em) !important;
-        font-size: 0.9em !important;
-    }
-
     .signature {
         width: 80% !important;
         max-width: 150px !important;
@@ -790,28 +773,6 @@ code {
 .fade-in-section.is-visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* Search animations */
-#search-results {
-  opacity: 0;
-  transform: translateY(-10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-#search-results[style*="display: block"] {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-#search-input {
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-#search-input:focus {
-  outline: none;
-  border-color: #ffaa3d !important;
-  box-shadow: 0 0 0 3px rgba(255, 197, 109, 0.2);
 }
 
 /* Coming Soon badge animation */
