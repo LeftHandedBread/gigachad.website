@@ -17,7 +17,7 @@
     </nav>
     <header>
         <h1><a href="/index.html">The Gigachad Network</a></h1>
-        <img src="/img/gigachad_pc.jpg" width="720">
+        <img src="/img/gigachad_pc.jpg" alt="Gigachad on his PC" width="720">
         <h3>The most trustworthy VPN is the VPN you make yourself.</h3>
     </header>
     <hr>
@@ -40,7 +40,7 @@
         <hr>
         <section>
             <h2>Client Setup (Linux)</h2>
-            <p>First, <a href="https://www.wireguard.com" target="_blank" rel="noopener noreferrer">Download Wireguard</a> for your Linux environment.</p>
+            <p>First, <a href="https://www.wireguard.com" target="_blank" rel="noopener noreferrer">Download WireGuard</a> for your Linux environment.</p>
             <p>Second, Enable IP Forwarding in the text file <code>/etc/sysctl.conf</code>, by removing the comment on line 28:<br>
                 <code>#net.ipv4.ip_forward = 1</code> <strong>→</strong> <code>net.ipv4.ip_forward = 1</code></p>
             <p>You can also do this for IPv6 on line 33, if you want, which we may support in the future, but don't currently:<br>
@@ -65,20 +65,20 @@ AllowedIPs = 0.0.0.0/1, 128.0.0.0/1
 Endpoint = 192.3.251.174:51820
 PersistentKeepalive = 20
                 </pre>
-                <p>Assuming you use systemd, you can start wireguard with this command:<br>
+                <p>Assuming you use systemd, you can start WireGuard with this command:<br>
                     <code>systemctl start wg-quick@wg0</code><br>
                     And you can stop it with this command:<br>
                     <code>systemctl stop wg-quick@wg0</code><br>
-                    If you want wireguard to start automatically on PC startup, create a system link:<br>
+                    If you want WireGuard to start automatically on PC startup, create a system link:<br>
                     <code>systemctl enable wg-quick@wg0.conf</code></p>
                 <p>And that's it. Your VPN should be up and running.</p>
         </section>
         <hr>
         <section>
             <h2>Client Setup (Windows)</h2>
-            <p>First, <a href="https://www.wireguard.com" target="_blank" rel="noopener noreferrer">Download Wireguard</a>, and install it.</p>
+            <p>First, <a href="https://www.wireguard.com" target="_blank" rel="noopener noreferrer">Download WireGuard</a>, and install it.</p>
             <p>Second, add an empty tunnel:<br>
-                <img src="/img/wireguard-windows-add-tunnel.png"><br>
+                <img src="/img/wireguard-windows-add-tunnel.png" alt="WireGuard add tunnel screen on Windows"><br>
                 This should automatically generate a <code>Private key</code> and <code>Public Key</code>.</p>
             <p>Third, fill your configuration file with the following:<br>
                 Remeber to not overwrite the <code>Private Key</code>.</p>
