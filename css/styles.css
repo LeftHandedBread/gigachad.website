@@ -72,13 +72,15 @@ header img {
 
 header h3 {
   opacity: 0;
-  animation: typeWriter 2s steps(40) 1.6s forwards, fadeIn 0.5s ease-out 1.6s forwards;
+  --quote-chars: 34;
+  width: 0;
+  max-width: calc(var(--quote-chars) * 1ch);
+  animation: typeWriter 2s steps(var(--quote-chars), end) 1.6s forwards, fadeIn 0.5s ease-out 1.6s forwards, removeBorder 0.1s 3.6s forwards;
   overflow: hidden;
   white-space: nowrap;
   border-right: 3px solid #ffc56d;
-  max-width: 100%;
   margin: 0 auto;
-  display: block;
+  display: inline-block;
   text-align: center;
 }
 
@@ -115,8 +117,7 @@ header h3 {
     width: 0;
   }
   to {
-    width: fit-content;
-    max-width: 100%;
+    width: calc(var(--quote-chars) * 1ch);
   }
 }
 
@@ -125,10 +126,6 @@ header h3 {
   to {
     border-right: none;
   }
-}
-
-header h3 {
-  animation: typeWriter 2s steps(40) 1.6s forwards, fadeIn 0.5s ease-out 1.6s forwards, removeBorder 0.1s 3.6s forwards;
 }
 
 body {
