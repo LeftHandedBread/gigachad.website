@@ -262,13 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollProgress.id = 'scroll-progress';
     document.body.prepend(scrollProgress);
 
-    // Create particles container
-    const particlesContainer = document.createElement('div');
-    particlesContainer.id = 'particles-container';
-    document.body.prepend(particlesContainer);
-
     // Initialize all features
-    createParticles();
     addFadeInSections();
     handleScrollAnimations();
     handleParallax();
