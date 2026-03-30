@@ -255,12 +255,32 @@ function animateHorizontalRules() {
     hrs.forEach(hr => hrObserver.observe(hr));
 }
 
+// ===== THEME SWITCHER =====
+function applyTheme(theme) {
+    document.body.classList.remove('light', 'oled');
+    if (theme !== 'dark') {
+        document.body.classList.add(theme);
+    }
+    document.querySelectorAll('.theme-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.theme === theme);
+    });
+    localStorage.setItem('theme', theme);
+}
+
 // ===== INITIALIZE ALL ANIMATIONS =====
 document.addEventListener('DOMContentLoaded', () => {
     // Create scroll progress bar element
     const scrollProgress = document.createElement('div');
     scrollProgress.id = 'scroll-progress';
     document.body.prepend(scrollProgress);
+
+    // Initialize theme
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    applyTheme(savedTheme);
+
+    document.querySelectorAll('.theme-btn').forEach(btn => {
+        btn.addEventListener('click', () => applyTheme(btn.dataset.theme));
+    });
 
     // Initialize all features
     addFadeInSections();
