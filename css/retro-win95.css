@@ -168,7 +168,23 @@
   content: none !important;
 }
 
+/* header h2 used as tagline/subtitle (valheim, factorio pages) */
+:root[data-retro='win95'] header h2 {
+  font-style: italic !important;
+  font-weight: normal !important;
+  font-size: 12px !important;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+  margin: 8px auto !important;
+  text-align: center !important;
+  color: var(--w95-black) !important;
+  opacity: 1 !important;
+  animation: none !important;
+  transform: none !important;
+}
+
 :root[data-retro='win95'] header img {
+  display: block !important;
   border: 2px solid !important;
   border-color: var(--w95-gray-darker) var(--w95-gray-light) var(--w95-gray-light) var(--w95-gray-darker) !important;
   max-width: 75% !important;
@@ -389,8 +405,15 @@
   letter-spacing: 0 !important;
 }
 
+:root[data-retro='win95'] .tutorial-link:hover {
+  background: var(--w95-gray) !important;
+  color: var(--w95-black) !important;
+  text-decoration: none !important;
+}
+
 :root[data-retro='win95'] .tutorial-link:active {
   border-color: var(--w95-gray-darker) var(--w95-gray-light) var(--w95-gray-light) var(--w95-gray-darker) !important;
+  padding: 3px 5px 1px 7px !important;
 }
 
 /* ============ FOOTER ============ */
@@ -429,19 +452,6 @@
   margin: 4px 0 !important;
 }
 
-:root[data-retro='win95'] audio {
-  filter: grayscale(1) contrast(1.1) !important;
-  margin: 8px auto !important;
-  border-radius: 0 !important;
-  border: 2px solid;
-  border-color: var(--w95-gray-darker) var(--w95-gray-light) var(--w95-gray-light) var(--w95-gray-darker);
-  background: var(--w95-gray);
-}
-
-/* Neutralize footer audio sepia filter */
-:root[data-retro='win95'] footer audio {
-  filter: grayscale(1) contrast(1.1) !important;
-}
 
 /* ============ SIGNATURES ============ */
 :root[data-retro='win95'] .signature {
