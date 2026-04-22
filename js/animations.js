@@ -119,6 +119,10 @@ function createAudioVisualizer() {
         max-width: 200px;
     `;
 
+    const rootStyles = getComputedStyle(document.documentElement);
+    const accentColor = rootStyles.getPropertyValue('--primary').trim() || '#ffc56d';
+    const accentLightColor = rootStyles.getPropertyValue('--primary-light').trim() || '#ffaa3d';
+
     // Create bars
     for (let i = 0; i < 20; i++) {
         const bar = document.createElement('div');
@@ -126,7 +130,7 @@ function createAudioVisualizer() {
         bar.style.cssText = `
             width: 6px;
             height: 10px;
-            background: linear-gradient(to top, #ffc56d, #ffaa3d);
+            background: linear-gradient(to top, ${accentColor}, ${accentLightColor});
             border-radius: 3px 3px 0 0;
             transition: height 0.1s ease;
         `;
@@ -181,7 +185,7 @@ function addButtonRipples() {
                 width: ${size}px;
                 height: ${size}px;
                 border-radius: 50%;
-                background: rgba(255, 197, 109, 0.5);
+                background: rgba(var(--accent-rgb, 255, 197, 109), 0.5);
                 left: ${x}px;
                 top: ${y}px;
                 pointer-events: none;

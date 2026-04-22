@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +6,9 @@
     <meta name="description" content="Set up secure WireGuard VPN access to the Gigachad Network. Connect to self-hosted services from anywhere with this VPN configuration guide.">
     <link rel="icon" href="/img/favicon.png" type="image/png">
     <title>Gigachad Network - VPN</title>
+    <script src="/js/theme.js"></script>
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/retro-win95.css">
 </head>
 <body id="top">
     <nav class="main-nav">
@@ -14,6 +16,7 @@
         <a class="nav-btn" href="/index.html#services">Services</a>
         <a class="nav-btn" href="/index.html#gameservers">Game Servers</a>
         <a class="nav-btn" href="/index.html#articles">Articles</a>
+        <button class="nav-btn retro-toggle" type="button" aria-pressed="false">Retro</button>
     </nav>
     <header>
         <h1><a href="/index.html">The Gigachad Network</a></h1>
@@ -42,9 +45,9 @@
             <h2>Client Setup (Linux)</h2>
             <p>First, <a href="https://www.wireguard.com" target="_blank" rel="noopener noreferrer">Download WireGuard</a> for your Linux environment.</p>
             <p>Second, Enable IP Forwarding in the text file <code>/etc/sysctl.conf</code>, by removing the comment on line 28:<br>
-                <code>#net.ipv4.ip_forward = 1</code> <strong>→</strong> <code>net.ipv4.ip_forward = 1</code></p>
+                <code>#net.ipv4.ip_forward = 1</code> <strong>â†’</strong> <code>net.ipv4.ip_forward = 1</code></p>
             <p>You can also do this for IPv6 on line 33, if you want, which we may support in the future, but don't currently:<br>
-                <code>#net.ipv6.ip_forward = 1</code> <strong>→</strong> <code>net.ipv6.ip_forward = 1</code></p>
+                <code>#net.ipv6.ip_forward = 1</code> <strong>â†’</strong> <code>net.ipv6.ip_forward = 1</code></p>
             <p>Third, generate a key pair to use. You will put your private key on line 2 in the <code>/etc/wireguard/wg0.conf</code> file, and the public one you will give to Bread or Carson.<br>
                 <code>wg genkey > server-private-key</code>// Generate Private Key<br>
                 <code>wg pubkey < server-private-key > server-public-key</code>// Generate Public Key from Private Key<br>
@@ -151,3 +154,4 @@ PersistentKeepalive = 20
     </footer>
 </body>
 </html>
+

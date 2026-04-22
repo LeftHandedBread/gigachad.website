@@ -1,0 +1,660 @@
+/* Windows 95 Retro Skin — activates on [data-retro="win95"] */
+
+:root[data-retro='win95'] {
+  --w95-teal: #008080;
+  --w95-gray: #c0c0c0;
+  --w95-gray-light: #dfdfdf;
+  --w95-gray-dark: #808080;
+  --w95-gray-darker: #404040;
+  --w95-white: #ffffff;
+  --w95-black: #000000;
+  --w95-title-blue: #000080;
+  --w95-title-blue-light: #1084d0;
+  --w95-link: #0000ee;
+  --w95-link-visited: #551a8b;
+  --w95-gold: #b8860b;
+  --w95-gold-light: #daa520;
+  --w95-gold-bright: #ffc56d;
+  --w95-font: 'MS Sans Serif', 'Microsoft Sans Serif', 'Tahoma', 'Geneva', sans-serif;
+  --w95-mono: 'Courier New', 'Courier', monospace;
+
+  color-scheme: light;
+}
+
+/* ============ BASE RESET ============ */
+:root[data-retro='win95'] body {
+  background: var(--w95-teal) !important;
+  background-image: none !important;
+  color: var(--w95-black);
+  font-family: var(--w95-font);
+  font-size: 11px;
+  line-height: 1.3;
+  margin: 0;
+  padding: 0 !important;
+  padding-top: 4px !important;
+  overflow-x: auto;
+}
+
+/* Kill global animated/gradient bg layers */
+:root[data-retro='win95'] body::before,
+:root[data-retro='win95'] body::after {
+  display: none !important;
+  content: none !important;
+}
+
+:root[data-retro='win95'] * {
+  border-radius: 0 !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  transition: none !important;
+  animation: none !important;
+  backdrop-filter: none !important;
+}
+
+/* ============ TYPOGRAPHY ============ */
+:root[data-retro='win95'] h1,
+:root[data-retro='win95'] h2,
+:root[data-retro='win95'] h3,
+:root[data-retro='win95'] h4,
+:root[data-retro='win95'] h5,
+:root[data-retro='win95'] h6 {
+  font-family: var(--w95-font);
+  font-weight: bold;
+  color: var(--w95-black);
+  margin: 0.5em 0;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:root[data-retro='win95'] h1 {
+  font-size: 18px !important;
+  text-align: left !important;
+  background: linear-gradient(90deg, var(--w95-title-blue) 0%, var(--w95-title-blue-light) 100%) !important;
+  color: var(--w95-white) !important;
+  padding: 4px 8px !important;
+  margin: 0 0 8px 0 !important;
+  border: 2px solid !important;
+  border-color: var(--w95-gray-light) var(--w95-gray-darker) var(--w95-gray-darker) var(--w95-gray-light) !important;
+  border-bottom-color: var(--w95-gold) !important;
+  opacity: 1 !important;
+  animation: none !important;
+  transform: none !important;
+}
+
+:root[data-retro='win95'] h1 a {
+  color: var(--w95-white) !important;
+  text-decoration: none !important;
+}
+
+:root[data-retro='win95'] h2 {
+  font-size: 14px;
+  border-bottom: 1px solid var(--w95-gray-dark);
+  padding-bottom: 2px;
+}
+
+:root[data-retro='win95'] h3 {
+  font-size: 12px;
+}
+
+:root[data-retro='win95'] h4 {
+  font-size: 11px;
+}
+
+:root[data-retro='win95'] p {
+  font-size: 11px;
+  margin: 0.5em 0;
+}
+
+:root[data-retro='win95'] a {
+  color: var(--w95-link);
+  text-decoration: underline;
+  font-family: var(--w95-font);
+}
+
+:root[data-retro='win95'] a:visited {
+  color: var(--w95-link-visited);
+}
+
+:root[data-retro='win95'] a:hover {
+  background: var(--w95-title-blue) !important;
+  color: var(--w95-white) !important;
+  text-decoration: underline !important;
+}
+
+:root[data-retro='win95'] a:focus-visible {
+  outline: 1px dotted var(--w95-black) !important;
+  outline-offset: 1px !important;
+}
+
+/* ============ LAYOUT WRAPPERS ============ */
+:root[data-retro='win95'] header,
+:root[data-retro='win95'] main,
+:root[data-retro='win95'] footer {
+  background: var(--w95-gray);
+  color: var(--w95-black);
+  max-width: 900px;
+  margin: 8px auto;
+  padding: 8px;
+  border: 2px solid;
+  border-color: var(--w95-gray-light) var(--w95-gray-darker) var(--w95-gray-darker) var(--w95-gray-light);
+  box-shadow: 1px 1px 0 var(--w95-black) !important;
+}
+
+:root[data-retro='win95'] header {
+  text-align: center;
+  padding: 4px !important;
+}
+
+:root[data-retro='win95'] header h3 {
+  font-style: italic;
+  font-weight: normal;
+  margin: 8px auto !important;
+  width: auto !important;
+  max-width: none !important;
+  opacity: 1 !important;
+  overflow: visible !important;
+  white-space: normal !important;
+  border-right: none !important;
+  display: block !important;
+  text-align: center;
+  color: var(--w95-black) !important;
+  font-size: 12px !important;
+  animation: none !important;
+}
+
+:root[data-retro='win95'] header h3::before,
+:root[data-retro='win95'] header h3::after {
+  display: none !important;
+  content: none !important;
+}
+
+:root[data-retro='win95'] header img {
+  border: 2px solid !important;
+  border-color: var(--w95-gray-darker) var(--w95-gray-light) var(--w95-gray-light) var(--w95-gray-darker) !important;
+  max-width: 75% !important;
+  width: 720px !important;
+  opacity: 1 !important;
+  animation: none !important;
+  transform: none !important;
+  margin: 8px auto !important;
+  border-radius: 0 !important;
+}
+
+:root[data-retro='win95'] hr {
+  border: none !important;
+  border-top: 1px solid var(--w95-gray-dark) !important;
+  border-bottom: 1px solid var(--w95-gray-light) !important;
+  height: 0 !important;
+  margin: 8px 0 !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Hide JS-injected decorations in retro mode */
+:root[data-retro='win95'] #scroll-progress,
+:root[data-retro='win95'] #audio-visualizer,
+:root[data-retro='win95'] #particles-container,
+:root[data-retro='win95'] .particle,
+:root[data-retro='win95'] .theme-toggle {
+  display: none !important;
+}
+
+/* Neutralize parallax + fade-in inline transforms */
+:root[data-retro='win95'] header img,
+:root[data-retro='win95'] .fade-in-section {
+  transform: none !important;
+  opacity: 1 !important;
+}
+
+/* ============ NAV — Win95 Taskbar ============ */
+:root[data-retro='win95'] .main-nav {
+  background: var(--w95-gray) !important;
+  border: 2px solid !important;
+  border-color: var(--w95-gray-light) var(--w95-gray-darker) var(--w95-gray-darker) var(--w95-gray-light) !important;
+  padding: 2px !important;
+  gap: 2px !important;
+  position: sticky;
+  top: 0;
+  backdrop-filter: none !important;
+}
+
+:root[data-retro='win95'] .nav-btn {
+  background: var(--w95-gray) !important;
+  color: var(--w95-black) !important;
+  border: 2px solid !important;
+  border-color: var(--w95-gray-light) var(--w95-gray-darker) var(--w95-gray-darker) var(--w95-gray-light) !important;
+  font-family: var(--w95-font) !important;
+  font-size: 11px !important;
+  font-weight: normal !important;
+  padding: 3px 10px !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  cursor: pointer;
+}
+
+:root[data-retro='win95'] .nav-btn:hover {
+  background: var(--w95-gray) !important;
+  color: var(--w95-black) !important;
+}
+
+:root[data-retro='win95'] .nav-btn:active,
+:root[data-retro='win95'] .nav-btn.active {
+  border-color: var(--w95-gray-darker) var(--w95-gray-light) var(--w95-gray-light) var(--w95-gray-darker) !important;
+  padding: 4px 9px 2px 11px !important;
+  color: var(--w95-gold) !important;
+  font-weight: bold !important;
+}
+
+:root[data-retro='win95'] .retro-toggle[aria-pressed='true'] {
+  border-color: var(--w95-gray-darker) var(--w95-gray-light) var(--w95-gray-light) var(--w95-gray-darker) !important;
+  color: var(--w95-gold) !important;
+  font-weight: bold !important;
+}
+
+/* ============ SECTIONS ============ */
+:root[data-retro='win95'] section {
+  background: var(--w95-gray);
+  border: 2px solid;
+  border-color: var(--w95-gray-darker) var(--w95-gray-light) var(--w95-gray-light) var(--w95-gray-darker);
+  padding: 8px;
+  margin: 8px 0;
+}
+
+:root[data-retro='win95'] .accent-heading {
+  background: linear-gradient(90deg, var(--w95-title-blue) 0%, var(--w95-title-blue-light) 100%) !important;
+  color: var(--w95-white) !important;
+  padding: 3px 6px !important;
+  margin: -8px -8px 8px -8px !important;
+  font-size: 13px !important;
+  border: none !important;
+  border-bottom: 1px solid var(--w95-gold) !important;
+  text-shadow: none !important;
+}
+
+:root[data-retro='win95'] .section-lead {
+  font-size: 11px;
+  font-style: normal;
+  color: var(--w95-black);
+}
+
+/* ============ SERVICE CARDS — Win95 Icons ============ */
+:root[data-retro='win95'] .services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 6px;
+  padding: 4px;
+}
+
+:root[data-retro='win95'] .service-card {
+  background: var(--w95-gray) !important;
+  border: 2px solid !important;
+  border-color: var(--w95-gray-light) var(--w95-gray-darker) var(--w95-gray-darker) var(--w95-gray-light) !important;
+  padding: 6px !important;
+  transform: none !important;
+}
+
+:root[data-retro='win95'] .service-card:hover {
+  transform: none !important;
+  background: var(--w95-gray) !important;
+}
+
+:root[data-retro='win95'] .service-btn {
+  background: transparent !important;
+  color: var(--w95-black) !important;
+  border: 1px dotted transparent !important;
+  padding: 4px !important;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none !important;
+  font-family: var(--w95-font) !important;
+}
+
+:root[data-retro='win95'] .service-btn:hover,
+:root[data-retro='win95'] .service-btn:focus {
+  background: var(--w95-title-blue) !important;
+  color: var(--w95-white) !important;
+  border: 1px dotted var(--w95-white) !important;
+}
+
+:root[data-retro='win95'] .service-btn:hover .service-name,
+:root[data-retro='win95'] .service-btn:hover .service-desc,
+:root[data-retro='win95'] .service-btn:focus .service-name,
+:root[data-retro='win95'] .service-btn:focus .service-desc {
+  color: var(--w95-white) !important;
+}
+
+:root[data-retro='win95'] .service-name {
+  font-size: 11px !important;
+  font-weight: bold !important;
+  color: var(--w95-black) !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+}
+
+:root[data-retro='win95'] .service-desc {
+  font-size: 10px !important;
+  color: var(--w95-gray-darker) !important;
+  margin-top: 2px;
+}
+
+:root[data-retro='win95'] .service-icon {
+  width: 32px !important;
+  height: 32px !important;
+  border: none !important;
+  margin-bottom: 4px;
+  image-rendering: pixelated;
+}
+
+:root[data-retro='win95'] .tutorial-link {
+  display: block;
+  background: var(--w95-gray) !important;
+  color: var(--w95-black) !important;
+  border: 2px solid !important;
+  border-color: var(--w95-gray-light) var(--w95-gray-darker) var(--w95-gray-darker) var(--w95-gray-light) !important;
+  font-size: 10px !important;
+  padding: 2px 6px !important;
+  margin-top: 4px;
+  text-decoration: none !important;
+  text-align: center;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+}
+
+:root[data-retro='win95'] .tutorial-link:active {
+  border-color: var(--w95-gray-darker) var(--w95-gray-light) var(--w95-gray-light) var(--w95-gray-darker) !important;
+}
+
+/* ============ FOOTER ============ */
+:root[data-retro='win95'] footer {
+  text-align: center !important;
+  font-size: 10px !important;
+  margin-top: 8px !important;
+  padding: 8px !important;
+  position: relative !important;
+}
+
+:root[data-retro='win95'] footer img {
+  border: 2px solid !important;
+  border-color: var(--w95-gray-darker) var(--w95-gray-light) var(--w95-gray-light) var(--w95-gray-darker) !important;
+  max-width: 300px !important;
+  width: 100% !important;
+  height: auto !important;
+  margin: 8px auto !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  filter: none !important;
+  animation: none !important;
+  transform: none !important;
+}
+
+:root[data-retro='win95'] footer img:hover {
+  filter: none !important;
+  animation: none !important;
+  transform: none !important;
+}
+
+:root[data-retro='win95'] footer p {
+  color: var(--w95-black) !important;
+  font-size: 10px !important;
+  margin: 4px 0 !important;
+}
+
+:root[data-retro='win95'] audio {
+  filter: grayscale(1) contrast(1.1) !important;
+  margin: 8px auto !important;
+  border-radius: 0 !important;
+  border: 2px solid;
+  border-color: var(--w95-gray-darker) var(--w95-gray-light) var(--w95-gray-light) var(--w95-gray-darker);
+  background: var(--w95-gray);
+}
+
+/* Neutralize footer audio sepia filter */
+:root[data-retro='win95'] footer audio {
+  filter: grayscale(1) contrast(1.1) !important;
+}
+
+/* ============ SIGNATURES ============ */
+:root[data-retro='win95'] .signature {
+  filter: invert(1) !important;
+  background: transparent !important;
+  padding: 4px !important;
+  border: none !important;
+  opacity: 1 !important;
+  animation: none !important;
+  transform: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  margin: 4px !important;
+  display: inline-block !important;
+}
+
+/* ============ SECTION IMAGES + IFRAMES ============ */
+:root[data-retro='win95'] section img,
+:root[data-retro='win95'] main > img {
+  border: 2px solid !important;
+  border-color: var(--w95-gray-darker) var(--w95-gray-light) var(--w95-gray-light) var(--w95-gray-darker) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  animation: none !important;
+  transform: none !important;
+  filter: none !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+:root[data-retro='win95'] iframe {
+  border: 2px solid !important;
+  border-color: var(--w95-gray-darker) var(--w95-gray-light) var(--w95-gray-light) var(--w95-gray-darker) !important;
+  border-radius: 0 !important;
+  background: var(--w95-black) !important;
+  max-width: 100% !important;
+}
+
+/* ============ TABLES ============ */
+:root[data-retro='win95'] table {
+  background: var(--w95-white) !important;
+  border: 2px solid !important;
+  border-color: var(--w95-gray-darker) var(--w95-gray-light) var(--w95-gray-light) var(--w95-gray-darker) !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  margin: 8px 0 !important;
+  font-size: 11px !important;
+  color: var(--w95-black) !important;
+}
+
+:root[data-retro='win95'] th {
+  background: var(--w95-gray) !important;
+  color: var(--w95-black) !important;
+  border: 1px solid !important;
+  border-color: var(--w95-gray-light) var(--w95-gray-darker) var(--w95-gray-darker) var(--w95-gray-light) !important;
+  padding: 3px 8px !important;
+  font-weight: bold !important;
+  text-align: left !important;
+}
+
+:root[data-retro='win95'] td {
+  background: var(--w95-white) !important;
+  color: var(--w95-black) !important;
+  border: 1px solid var(--w95-gray-dark) !important;
+  padding: 2px 8px !important;
+  text-align: left !important;
+}
+
+:root[data-retro='win95'] td a {
+  color: var(--w95-link) !important;
+}
+
+/* ============ CODE + PRE ============ */
+:root[data-retro='win95'] code {
+  background: var(--w95-white) !important;
+  color: var(--w95-black) !important;
+  border: 1px solid var(--w95-gray-dark) !important;
+  box-shadow: none !important;
+  font-family: var(--w95-mono) !important;
+  font-size: 11px !important;
+  padding: 1px 4px !important;
+  border-radius: 0 !important;
+}
+
+:root[data-retro='win95'] pre {
+  background: var(--w95-white) !important;
+  color: var(--w95-black) !important;
+  border: 2px solid !important;
+  border-color: var(--w95-gray-darker) var(--w95-gray-light) var(--w95-gray-light) var(--w95-gray-darker) !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  font-family: var(--w95-mono) !important;
+  font-size: 11px !important;
+  padding: 6px 8px !important;
+  margin: 8px 0 !important;
+}
+
+:root[data-retro='win95'] pre code {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+/* Inline <font color> elements in <pre> — keep readable on white */
+:root[data-retro='win95'] pre font[color] {
+  color: var(--w95-gold) !important;
+}
+
+/* ============ INLINE-STYLED CARDS (server info, callouts) ============ */
+:root[data-retro='win95'] div[style*="background:#222"],
+:root[data-retro='win95'] div[style*="background: #222"] {
+  background: var(--w95-gray) !important;
+  border: 2px solid !important;
+  border-color: var(--w95-gray-light) var(--w95-gray-darker) var(--w95-gray-darker) var(--w95-gray-light) !important;
+  border-radius: 0 !important;
+  box-shadow: 1px 1px 0 var(--w95-black) !important;
+  padding: 6px 12px !important;
+}
+
+:root[data-retro='win95'] div[style*="background:#222"] p,
+:root[data-retro='win95'] div[style*="background: #222"] p {
+  color: var(--w95-black) !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  font-family: var(--w95-font) !important;
+  font-size: 11px !important;
+  font-weight: normal !important;
+}
+
+:root[data-retro='win95'] div[style*="background:#222"] p[style*="color:#ffc56d"],
+:root[data-retro='win95'] div[style*="background: #222"] p[style*="color:#ffc56d"],
+:root[data-retro='win95'] div[style*="background:#222"] p[style*="color: #ffc56d"],
+:root[data-retro='win95'] div[style*="background: #222"] p[style*="color: #ffc56d"] {
+  font-family: var(--w95-mono) !important;
+  color: var(--w95-black) !important;
+  background: var(--w95-white) !important;
+  border: 1px solid var(--w95-gray-dark) !important;
+  padding: 2px 6px !important;
+  display: inline-block !important;
+  margin: 2px auto 0 auto !important;
+  font-size: 13px !important;
+  font-weight: bold !important;
+}
+
+/* Tutorial/article callout paragraphs */
+:root[data-retro='win95'] p[style*="rgba(255,197,109"] {
+  background: var(--w95-gray-light) !important;
+  border: 2px solid !important;
+  border-color: var(--w95-gray-darker) var(--w95-gray-light) var(--w95-gray-light) var(--w95-gray-darker) !important;
+  border-left: 2px solid var(--w95-gray-darker) !important;
+  border-radius: 0 !important;
+  padding: 6px 8px !important;
+  color: var(--w95-black) !important;
+}
+
+/* Grey caption spans (mod lists, etc.) */
+:root[data-retro='win95'] span[style*="color:grey"],
+:root[data-retro='win95'] span[style*="color: grey"],
+:root[data-retro='win95'] span[style*="color:gray"],
+:root[data-retro='win95'] span[style*="color: gray"] {
+  color: var(--w95-gray-darker) !important;
+}
+
+/* Legacy <font color> elements in body text — keep readable on gray bg */
+:root[data-retro='win95'] p font[color="#aaaaaa"],
+:root[data-retro='win95'] p font[color="#aaa"],
+:root[data-retro='win95'] font[color="#aaaaaa"]:not(pre font),
+:root[data-retro='win95'] font[color="#aaa"]:not(pre font) {
+  color: var(--w95-gray-darker) !important;
+}
+
+/* ============ RED WARNING BANNER (abyssal-ascent) ============ */
+:root[data-retro='win95'] div[style*="#e05555"] {
+  background: var(--w95-gray) !important;
+  border: 2px solid !important;
+  border-color: var(--w95-gray-light) var(--w95-gray-darker) var(--w95-gray-darker) var(--w95-gray-light) !important;
+  border-radius: 0 !important;
+  box-shadow: 1px 1px 0 var(--w95-black) !important;
+  padding: 8px 16px !important;
+}
+
+:root[data-retro='win95'] div[style*="#e05555"] p[style*="color:#e05555"] {
+  color: #a00 !important;
+  font-size: 14px !important;
+  letter-spacing: 1px !important;
+  font-family: var(--w95-font) !important;
+  font-weight: bold !important;
+}
+
+:root[data-retro='win95'] div[style*="#e05555"] p[style*="color:#aaa"] {
+  color: var(--w95-black) !important;
+  font-size: 11px !important;
+  font-family: var(--w95-font) !important;
+}
+
+/* ============ TOOLTIPS ============ */
+:root[data-retro='win95'] [data-tooltip]:hover::after {
+  background: #ffffe1 !important;
+  color: var(--w95-black) !important;
+  border: 1px solid var(--w95-black) !important;
+  font-size: 10px !important;
+  font-family: var(--w95-font) !important;
+  padding: 2px 4px !important;
+}
+
+/* ============ LISTS ============ */
+:root[data-retro='win95'] ul,
+:root[data-retro='win95'] ol {
+  font-size: 11px;
+  padding-left: 20px;
+}
+
+/* ============ SELECTION ============ */
+:root[data-retro='win95'] ::selection {
+  background: var(--w95-title-blue);
+  color: var(--w95-white);
+}
+
+/* ============ SCROLLBAR (webkit) ============ */
+:root[data-retro='win95'] ::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+  background: var(--w95-gray);
+}
+
+:root[data-retro='win95'] ::-webkit-scrollbar-thumb {
+  background: var(--w95-gray);
+  border: 2px solid;
+  border-color: var(--w95-gray-light) var(--w95-gray-darker) var(--w95-gray-darker) var(--w95-gray-light);
+}
+
+:root[data-retro='win95'] ::-webkit-scrollbar-track {
+  background: repeating-conic-gradient(var(--w95-gray) 0% 25%, var(--w95-gray-light) 0% 50%) 50% / 2px 2px;
+}
+
+:root[data-retro='win95'] ::-webkit-scrollbar-button {
+  background: var(--w95-gray);
+  border: 2px solid;
+  border-color: var(--w95-gray-light) var(--w95-gray-darker) var(--w95-gray-darker) var(--w95-gray-light);
+  height: 16px;
+  width: 16px;
+}
