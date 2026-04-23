@@ -51,6 +51,12 @@
   backdrop-filter: none !important;
 }
 
+/* Kill JS-injected ripple spans (they have no class, unlike .service-name / .service-desc) */
+:root[data-retro='win95'] .service-btn > span:not([class]),
+:root[data-retro='win95'] .nav-btn > span:not([class]) {
+  display: none !important;
+}
+
 /* ============ TYPOGRAPHY ============ */
 :root[data-retro='win95'] h1,
 :root[data-retro='win95'] h2,
@@ -649,25 +655,25 @@
 }
 
 /* ============ TOOLTIPS ============ */
-:root[data-retro='win95'] .service-card[data-tooltip]:hover::before,
-:root[data-retro='win95'] [data-tooltip]:hover::before {
-  background: var(--w95-gray) !important;
-  border: 2px solid !important;
-  border-color: var(--w95-gray-light) var(--w95-gray-darker) var(--w95-gray-darker) var(--w95-gray-light) !important;
+/* Win95 tooltip: flat pale yellow, 1px black border, no shadow, no arrow */
+:root[data-retro='win95'] .service-card[data-tooltip]:hover::before {
+  background: #ffffe1 !important;
   color: var(--w95-black) !important;
-  font-family: var(--w95-font) !important;
-  font-size: 11px !important;
-  line-height: 1.3 !important;
-  max-width: 240px !important;
-  padding: 4px 6px !important;
-  text-align: center !important;
-  box-shadow: 1px 1px 0 var(--w95-black) !important;
+  border: 1px solid var(--w95-black) !important;
   border-radius: 0 !important;
+  font-size: 10px !important;
+  font-family: var(--w95-font) !important;
+  padding: 3px 5px !important;
+  box-shadow: none !important;
+  animation: none !important;
+  transform: translateX(-50%) !important;
+  line-height: 1.3 !important;
+  text-align: left !important;
 }
 
-:root[data-retro='win95'] [data-tooltip]:hover::after {
-  border-top-color: var(--w95-gray-light) !important;
-  filter: drop-shadow(1px 1px 0 var(--w95-black)) !important;
+/* Hide arrow — Win95 tooltips have no arrow */
+:root[data-retro='win95'] .service-card[data-tooltip]:hover::after {
+  display: none !important;
 }
 
 /* ============ SERVER INFO PANELS ============ */
