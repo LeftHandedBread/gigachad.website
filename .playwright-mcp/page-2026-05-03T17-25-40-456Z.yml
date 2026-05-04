@@ -1,0 +1,161 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - link "Home" [ref=e3] [cursor=pointer]:
+      - /url: /index.html
+    - link "Services" [ref=e4] [cursor=pointer]:
+      - /url: /index.html#services
+    - link "Game Servers" [ref=e5] [cursor=pointer]:
+      - /url: /index.html#gameservers
+    - link "Articles" [ref=e6] [cursor=pointer]:
+      - /url: /index.html#articles
+    - button "Current theme OLED. Activate to switch to Dark." [ref=e7] [cursor=pointer]: OLED
+    - button "Retro skin Off. Activate to switch to Win95." [ref=e8] [cursor=pointer]: "Retro: Off"
+  - banner [ref=e9]:
+    - heading "The Gigachad Network" [level=1] [ref=e10]:
+      - link "The Gigachad Network" [ref=e11] [cursor=pointer]:
+        - /url: /index.html
+    - img "Gigachad portrait" [ref=e12]
+    - heading "How to Torrent Like a Chad" [level=3] [ref=e13]
+  - separator [ref=e14]
+  - main [ref=e15]:
+    - paragraph [ref=e17]:
+      - strong [ref=e18]: "Legal Notice:"
+      - text: Torrenting is a file-sharing technology used for many legal purposes including Linux ISOs, open-source software, and public-domain media. Always follow the laws in your country. This guide is for educational purposes only.
+    - separator [ref=e19]
+    - generic [ref=e20]:
+      - 'heading "Step 1: Get a Privacy-Focused VPN (Highly Recommended)" [level=2] [ref=e21]'
+      - paragraph [ref=e22]: When torrenting, your ISP can monitor your activity and identify copyrighted content. Your ISP can report you to copyright holders, who may issue DMCA notices or legal threats. While a VPN is not technically required to torrent, it's highly recommended for privacy and protection.
+      - heading "Recommended VPNs" [level=3] [ref=e23]
+      - list [ref=e24]:
+        - listitem [ref=e25]:
+          - strong [ref=e26]:
+            - link "Proton VPN" [ref=e27] [cursor=pointer]:
+              - /url: https://protonvpn.com
+          - text: — Strong privacy policy, Switzerland-based, excellent reputation
+        - listitem [ref=e28]:
+          - strong [ref=e29]:
+            - link "Mullvad" [ref=e30] [cursor=pointer]:
+              - /url: https://mullvad.net
+          - text: — No personal info required, accepts crypto, excellent for torrenting
+      - paragraph [ref=e31]:
+        - strong [ref=e32]: "Critical:"
+        - text: If using a VPN, turn it on
+        - strong [ref=e33]: before
+        - text: opening your torrent client. Make sure it's connected and active.
+      - paragraph [ref=e34]:
+        - strong [ref=e35]: "Torrenting Without a VPN:"
+        - text: If you choose to torrent without a VPN, minimize your seeding time. Close your torrent client immediately after downloads complete, or pause torrents when finished downloading. The more you seed, the more exposure you have to monitoring.
+    - separator [ref=e36]
+    - generic [ref=e37]:
+      - 'heading "Step 2: Use a Trusted Torrent Client" [level=2] [ref=e38]'
+      - paragraph [ref=e39]: Avoid ad-filled or closed-source torrent apps. They often come bundled with spyware, cryptocurrency miners, or other malicious software.
+      - heading "Recommended Client" [level=3] [ref=e40]
+      - paragraph [ref=e41]:
+        - strong [ref=e42]:
+          - link "qBittorrent" [ref=e43] [cursor=pointer]:
+            - /url: https://www.qbittorrent.org/
+      - list [ref=e44]:
+        - listitem [ref=e45]: Open source and actively maintained
+        - listitem [ref=e46]: No ads or bundled malware
+        - listitem [ref=e47]: Lightweight and efficient
+        - listitem [ref=e48]: Built-in search engine for trackers
+      - paragraph [ref=e49]:
+        - strong [ref=e50]: "Avoid:"
+        - text: uTorrent (now contains ads and crypto miners), BitTorrent client (same ownership as uTorrent)
+    - separator [ref=e51]
+    - generic [ref=e52]:
+      - 'heading "Step 3: Bind VPN to qBittorrent" [level=2] [ref=e53]'
+      - paragraph [ref=e54]: If using a VPN, bind it to qBittorrent to prevent IP leaks if the VPN disconnects.
+      - paragraph [ref=e55]:
+        - strong [ref=e56]: "Steps:"
+        - text: Open qBittorrent → Tools → Options → Advanced → Network Interface → Select your VPN (e.g.,
+        - code [ref=e57]: wg-mullvad
+        - text: ","
+        - code [ref=e58]: protonvpn
+        - text: ) → Apply and restart.
+      - heading "Video Tutorial" [level=3] [ref=e59]
+      - generic [ref=e60]: Your browser does not support the video element.
+    - separator [ref=e61]
+    - generic [ref=e62]:
+      - 'heading "Step 4: Find Torrents Safely" [level=2] [ref=e63]'
+      - heading "What is a Torrent Tracker?" [level=3] [ref=e64]
+      - paragraph [ref=e65]: A torrent tracker is a website that indexes torrent files and magnet links. Think of it as a search engine for torrents - you search for the content you want, and the tracker provides a .torrent file or magnet link that your torrent client uses to download the actual content from other users (peers) sharing it.
+      - paragraph [ref=e66]:
+        - strong [ref=e67]: "Use an adblocker:"
+        - text: Torrent tracker sites are often filled with aggressive ads and pop-ups. Use
+        - link "Brave Browser" [ref=e68] [cursor=pointer]:
+          - /url: https://brave.com/
+        - text: or
+        - link "Firefox" [ref=e69] [cursor=pointer]:
+          - /url: https://www.mozilla.org/firefox/
+        - text: +
+        - link "uBlock Origin" [ref=e70] [cursor=pointer]:
+          - /url: https://ublockorigin.com/
+        - text: to block them.
+      - heading "Recommended Trackers" [level=3] [ref=e71]
+      - paragraph [ref=e72]:
+        - link "1337x.to" [ref=e73] [cursor=pointer]:
+          - /url: https://1337x.to
+        - text: "- General purpose tracker with movies, TV, software, games, and more"
+      - paragraph [ref=e74]:
+        - link "nyaa.si" [ref=e75] [cursor=pointer]:
+          - /url: https://nyaa.si/
+        - text: "- Specialized tracker for anime, manga, and Asian media"
+      - heading "Safety Tips" [level=3] [ref=e76]
+      - list [ref=e77]:
+        - listitem [ref=e78]: Prefer torrents with many seeders and positive comments
+        - listitem [ref=e79]: Stick to verified or trusted uploaders (usually marked with badges)
+        - listitem [ref=e80]: Avoid brand-new torrents without any feedback or comments
+        - listitem [ref=e81]: Check file sizes - if a 4K movie is only 50MB, it's fake or malware
+    - separator [ref=e82]
+    - generic [ref=e83]:
+      - 'heading "Step 5: Add Torrents to qBittorrent" [level=2] [ref=e84]'
+      - paragraph [ref=e85]:
+        - text: Click the
+        - strong [ref=e86]: Magnet
+        - text: button on a tracker, and your browser will open it with qBittorrent. Alternatively, download the
+        - code [ref=e87]: .torrent
+        - text: file and open it with qBittorrent.
+      - heading "Video Tutorial" [level=3] [ref=e88]
+      - generic [ref=e89]: Your browser does not support the video element.
+    - separator [ref=e90]
+    - generic [ref=e91]:
+      - heading "Safety Disclaimer" [level=2] [ref=e92]
+      - paragraph [ref=e93]:
+        - strong [ref=e94]: "Important:"
+        - text: Torrenting, especially piracy, comes with risks. Downloaded files may contain malware, viruses, or other harmful content. Download at your own risk. You can use tools like
+        - link "VirusTotal" [ref=e95] [cursor=pointer]:
+          - /url: https://www.virustotal.com/
+        - text: to scan downloaded files before opening them - simply upload the file to VirusTotal and it will scan it with multiple antivirus engines.
+    - separator [ref=e96]
+    - generic [ref=e97]:
+      - heading "Key Takeaway" [level=2] [ref=e98]
+      - paragraph [ref=e99]: "Safe torrenting comes down to:"
+      - list [ref=e100]:
+        - listitem [ref=e101]:
+          - text: A
+          - strong [ref=e102]: reputable VPN with no-logs policy
+        - listitem [ref=e103]:
+          - text: Using
+          - strong [ref=e104]: qBittorrent as your torrent client
+        - listitem [ref=e105]:
+          - strong [ref=e106]: Binding the VPN to qBittorrent
+          - text: to prevent IP leaks
+        - listitem [ref=e107]:
+          - text: Using
+          - strong [ref=e108]: trusted trackers and verified uploaders
+        - listitem [ref=e109]:
+          - text: Practicing
+          - strong [ref=e110]: basic file-verification habits
+        - listitem [ref=e111]:
+          - text: Keeping all
+          - strong [ref=e112]: software updated
+      - paragraph [ref=e113]: Follow these steps, and you'll be torrenting like a Gigachad.
+  - separator [ref=e114]
+  - contentinfo [ref=e115]:
+    - paragraph [ref=e116]:
+      - link "Go to top" [ref=e117] [cursor=pointer]:
+        - /url: "#top"
+    - img "Gigachad on his PC" [ref=e118]
+    - generic [ref=e140]: Your browser does not support the audio element.
+    - paragraph [ref=e141]: © 2026 Gigachad Network. All rights reserved.

@@ -1,0 +1,58 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - link "Home" [ref=e3] [cursor=pointer]:
+      - /url: /index.html
+    - link "Services" [ref=e4] [cursor=pointer]:
+      - /url: /index.html#services
+    - link "Game Servers" [ref=e5] [cursor=pointer]:
+      - /url: /index.html#gameservers
+    - link "Articles" [ref=e6] [cursor=pointer]:
+      - /url: /index.html#articles
+    - button "Current theme Light. Activate to switch to OLED." [ref=e7] [cursor=pointer]: Light
+    - button "Retro skin Off. Activate to switch to Win95." [ref=e8] [cursor=pointer]: "Retro: Off"
+  - banner [ref=e9]:
+    - heading "The Gigachad Network" [level=1] [ref=e10]:
+      - link "The Gigachad Network" [ref=e11] [cursor=pointer]:
+        - /url: /index.html
+    - img "Gigachad styled as Minecraft Steve" [ref=e12]
+    - heading "Creeper? Aw, man." [level=3] [ref=e13]
+    - separator [ref=e14]
+  - main [ref=e15]:
+    - generic [ref=e16]:
+      - heading "Vanilla" [level=2] [ref=e17]
+      - heading "About" [level=2] [ref=e18]
+      - paragraph [ref=e19]: This server is a casual server for the giga-est of chads.
+    - generic [ref=e20]:
+      - heading "Server Information" [level=2] [ref=e21]
+      - paragraph [ref=e22]: Minecraft 1.21.11 — Java & Bedrock compatible
+      - generic [ref=e23]:
+        - generic [ref=e24]:
+          - paragraph [ref=e25]: Java Server Address
+          - paragraph [ref=e26]: mc.toast-host.com:27067
+        - generic [ref=e27]:
+          - paragraph [ref=e28]: Bedrock Server Address
+          - paragraph [ref=e29]: mc.toast-host.com:27068
+    - generic [ref=e30]:
+      - heading "Recommended Launcher" [level=2] [ref=e31]
+      - paragraph [ref=e32]:
+        - text: We recommend you download and familiarize yourself with
+        - link "Prism Launcher" [ref=e33] [cursor=pointer]:
+          - /url: https://prismlauncher.org/
+        - text: ", as it is very versatile, lightweight, and stable. Prism Launcher is a free, open-source Minecraft launcher that lets you manage multiple instances of the game, each with their own mods, settings, and versions."
+    - generic [ref=e34]:
+      - heading "Minimum Requirements" [level=2] [ref=e35]
+      - paragraph [ref=e36]: Anything that can play Minecraft - Java Edition 1.21.11 or Bedrock Edition on any supported platform (PC, Mac, Linux, Xbox, PlayStation, Nintendo Switch, iOS, Android).
+    - generic [ref=e37]:
+      - heading "FAQ" [level=2] [ref=e38]
+      - paragraph [ref=e39]: "Q: Can I have the world seed?"
+      - paragraph [ref=e40]: "A: No, Gigachads don't ask for free candy."
+      - paragraph [ref=e41]: "Q: Can I use freecam/x-ray?"
+      - paragraph [ref=e42]: "A: Gigachads don't need free candy."
+  - separator [ref=e43]
+  - contentinfo [ref=e44]:
+    - paragraph [ref=e45]:
+      - link "Go to top" [ref=e46] [cursor=pointer]:
+        - /url: "#top"
+    - img "Gigachad on his PC" [ref=e47]
+    - generic [ref=e69]: Your browser does not support the audio element.
+    - paragraph [ref=e70]: © 2026 Gigachad Network. All rights reserved.

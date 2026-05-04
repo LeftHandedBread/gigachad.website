@@ -8,7 +8,18 @@
       "Bash(git push *)",
       "Bash(git rebase *)",
       "Bash(GIT_EDITOR=true git rebase *)",
-      "Bash(git pull *)"
+      "Bash(git pull *)",
+      "Bash(cat)",
+      "Bash(chmod +x /tmp/check_links.sh)",
+      "Bash(/tmp/check_links.sh)",
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_console_messages",
+      "mcp__playwright__browser_evaluate",
+      "mcp__plugin_context-mode_context-mode__ctx_batch_execute",
+      "mcp__plugin_context-mode_context-mode__ctx_execute",
+      "mcp__playwright__browser_click"
     ]
   }
 }

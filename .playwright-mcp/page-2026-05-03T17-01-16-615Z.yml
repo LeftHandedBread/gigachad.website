@@ -1,0 +1,45 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - link "Home" [ref=e3] [cursor=pointer]:
+      - /url: /index.html
+    - link "Services" [ref=e4] [cursor=pointer]:
+      - /url: /index.html#services
+    - link "Game Servers" [ref=e5] [cursor=pointer]:
+      - /url: /index.html#gameservers
+    - link "Articles" [ref=e6] [cursor=pointer]:
+      - /url: /index.html#articles
+    - button "Current theme Light. Activate to switch to OLED." [ref=e7] [cursor=pointer]: Light
+    - button "Retro skin Off. Activate to switch to Win95." [ref=e8] [cursor=pointer]: "Retro: Off"
+  - banner [ref=e9]:
+    - heading "The Gigachad Network" [level=1] [ref=e10]:
+      - link "The Gigachad Network" [ref=e11] [cursor=pointer]:
+        - /url: /index.html
+    - img "Gigachad portrait" [ref=e12]
+    - heading "The factory must grow." [level=2] [ref=e13]
+    - separator [ref=e14]
+  - main [ref=e15]:
+    - generic [ref=e16]:
+      - heading "About" [level=2] [ref=e17]
+      - paragraph [ref=e18]: A vanilla Factorio server for giga-est of chads. No mods, no extra setup, just connect and start automating.
+    - generic [ref=e19]:
+      - heading "Minimum Requirements" [level=2] [ref=e20]
+      - paragraph [ref=e21]: Latest version of Factorio.
+      - paragraph [ref=e22]: This server is vanilla — no mods needed.
+    - generic [ref=e23]:
+      - heading "Server Info" [level=2] [ref=e24]
+      - generic [ref=e25]:
+        - generic [ref=e26]:
+          - paragraph [ref=e27]: Server IP
+          - paragraph [ref=e28]: mc.toast-host.com:27007
+        - generic [ref=e29]:
+          - paragraph [ref=e30]: Password
+          - paragraph [ref=e31]: bread
+    - paragraph [ref=e32]: The factorio must grow
+  - separator [ref=e33]
+  - contentinfo [ref=e34]:
+    - paragraph [ref=e35]:
+      - link "Go to top" [ref=e36] [cursor=pointer]:
+        - /url: "#top"
+    - img "Gigachad on his PC" [ref=e37]
+    - generic [ref=e59]: Your browser does not support the audio element.
+    - paragraph [ref=e60]: © 2026 Gigachad Network. All rights reserved.

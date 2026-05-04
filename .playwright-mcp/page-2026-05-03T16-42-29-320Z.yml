@@ -1,0 +1,155 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - link "Home" [ref=e3] [cursor=pointer]:
+      - /url: /index.html
+    - link "Services" [ref=e4] [cursor=pointer]:
+      - /url: /index.html#services
+    - link "Game Servers" [ref=e5] [cursor=pointer]:
+      - /url: /index.html#gameservers
+    - link "Articles" [ref=e6] [cursor=pointer]:
+      - /url: /index.html#articles
+    - button "Current theme Light. Activate to switch to OLED." [ref=e7] [cursor=pointer]: Light
+    - button "Retro skin Off. Activate to switch to Win95." [ref=e8] [cursor=pointer]: "Retro: Off"
+  - banner [ref=e9]:
+    - heading "The Gigachad Network" [level=1] [ref=e10]:
+      - link "The Gigachad Network" [ref=e11] [cursor=pointer]:
+        - /url: /index.html
+    - img "Gigachad on his PC" [ref=e12]
+    - heading "The most trustworthy VPN is the VPN you make yourself." [level=3] [ref=e13]
+  - separator [ref=e14]
+  - main [ref=e15]:
+    - generic [ref=e16]:
+      - heading "About" [level=2] [ref=e17]
+      - paragraph [ref=e18]:
+        - text: We use VPNs in the way they were originally intended. Connecting computers across the web into one single network where we do what we want, the way we want to do it.
+        - text: No public IP? No control over your home network? No problem. Share files across the network from anywhere, to anywhere. Forward a port to host a server. Get access to VPN exclusive databases. We don't mess around. Help us build an intranet fit for only the giga-est of chads.
+    - generic [ref=e19]:
+      - heading "Join" [level=2] [ref=e20]
+      - paragraph [ref=e21]: The VPN is invite only. Contact Bread or Carson to request to join.
+    - separator [ref=e22]
+    - generic [ref=e23]:
+      - heading "Client Setup (Linux)" [level=2] [ref=e24]
+      - paragraph [ref=e25]:
+        - text: First,
+        - link "Download WireGuard" [ref=e26] [cursor=pointer]:
+          - /url: https://www.wireguard.com
+        - text: for your Linux environment.
+      - paragraph [ref=e27]:
+        - text: Second, Enable IP Forwarding in the text file
+        - code [ref=e28]: /etc/sysctl.conf
+        - text: ", by removing the comment on line 28:"
+        - code [ref=e29]: "#net.ipv4.ip_forward = 1"
+        - strong [ref=e30]: â†’
+        - code [ref=e31]: net.ipv4.ip_forward = 1
+      - paragraph [ref=e32]:
+        - text: "You can also do this for IPv6 on line 33, if you want, which we may support in the future, but don't currently:"
+        - code [ref=e33]: "#net.ipv6.ip_forward = 1"
+        - strong [ref=e34]: â†’
+        - code [ref=e35]: net.ipv6.ip_forward = 1
+      - paragraph [ref=e36]:
+        - text: Third, generate a key pair to use. You will put your private key on line 2 in the
+        - code [ref=e37]: /etc/wireguard/wg0.conf
+        - text: file, and the public one you will give to Bread or Carson.
+        - code [ref=e38]: wg genkey > server-private-key
+        - text: // Generate Private Key
+        - code [ref=e39]: wg pubkey < server-private-key > server-public-key
+        - text: // Generate Public Key from Private Key
+        - text: This will generate a key pair, and store them in text files. You can use
+        - code [ref=e40]: cat
+        - text: "to view them:"
+        - code [ref=e41]: cat server-private-key
+        - text: // Keep this secret.
+        - code [ref=e42]: cat server-public-key
+        - text: // Give this to Bread or Carson
+      - paragraph [ref=e43]:
+        - text: Now, you can make a configuration file at
+        - code [ref=e44]: /etc/wireguard/wg0.conf
+        - text: ", and fill it with the following:"
+      - strong [ref=e45]: /etc/wireguard/wg0.conf
+      - generic [ref=e46]: "[Interface] PrivateKey = # (Your Private Key) Address = 10.0.0.X/32 # Where \"X\" = Address given by Bread or Carson DNS = 10.0.0.1 # Use Gigachad DNS (optional) [Peer] PublicKey = y8+He4nBEAiVcjsxzP70qwfgJlkcs7g8LcWWQfi6nEE= AllowedIPs = 0.0.0.0/1, 128.0.0.0/1 Endpoint = 192.3.251.174:51820 PersistentKeepalive = 20"
+      - paragraph [ref=e47]:
+        - text: "Assuming you use systemd, you can start WireGuard with this command:"
+        - code [ref=e48]: systemctl start wg-quick@wg0
+        - text: "And you can stop it with this command:"
+        - code [ref=e49]: systemctl stop wg-quick@wg0
+        - text: "If you want WireGuard to start automatically on PC startup, create a system link:"
+        - code [ref=e50]: systemctl enable wg-quick@wg0.conf
+      - paragraph [ref=e51]: And that's it. Your VPN should be up and running.
+    - separator [ref=e52]
+    - generic [ref=e53]:
+      - heading "Client Setup (Windows)" [level=2] [ref=e54]
+      - paragraph [ref=e55]:
+        - text: First,
+        - link "Download WireGuard" [ref=e56] [cursor=pointer]:
+          - /url: https://www.wireguard.com
+        - text: ", and install it."
+      - paragraph [ref=e57]:
+        - text: "Second, add an empty tunnel:"
+        - img "WireGuard add tunnel screen on Windows" [ref=e58]
+        - text: This should automatically generate a
+        - code [ref=e59]: Private key
+        - text: and
+        - code [ref=e60]: Public Key
+        - text: .
+      - paragraph [ref=e61]:
+        - text: "Third, fill your configuration file with the following:"
+        - text: Remeber to not overwrite the
+        - code [ref=e62]: Private Key
+        - text: .
+      - strong [ref=e63]: "Config:"
+      - generic [ref=e64]: "[Interface] PrivateKey = # Auto-Generated Private Key. Don't overwrite this line. Address = 10.0.0.X/32 # Where \"X\" = Address given by Bread or Carson DNS = 10.0.0.1 # Use Gigachad DNS (optional) [Peer] PublicKey = y8+He4nBEAiVcjsxzP70qwfgJlkcs7g8LcWWQfi6nEE= AllowedIPs = 0.0.0.0/1, 128.0.0.0/1 Endpoint = 192.3.251.174:51820 PersistentKeepalive = 20"
+      - paragraph [ref=e65]:
+        - text: Now click
+        - code [ref=e66]: Save
+        - text: ", and then click"
+        - code [ref=e67]: Activate
+        - text: to activate the VPN, and you should be connected.
+    - separator [ref=e68]
+    - generic [ref=e69]:
+      - heading "Port Map" [level=2] [ref=e70]
+      - table [ref=e71]:
+        - rowgroup [ref=e72]:
+          - row "Port Description" [ref=e73]:
+            - columnheader "Port" [ref=e74]
+            - columnheader "Description" [ref=e75]
+        - rowgroup [ref=e76]:
+          - row "53 Custom DNS port" [ref=e77]:
+            - cell "53" [ref=e78]:
+              - code [ref=e79]: "53"
+            - cell "Custom DNS port" [ref=e80]
+          - row "80 gigachad.website HTTP port" [ref=e81]:
+            - cell "80" [ref=e82]:
+              - code [ref=e83]: "80"
+            - cell "gigachad.website HTTP port" [ref=e84]
+          - row "2456 Valheim server main port" [ref=e85]:
+            - cell "2456" [ref=e86]:
+              - code [ref=e87]: "2456"
+            - cell "Valheim server main port" [ref=e88]
+          - row "24454 Minecraft SimpleVoiceChat port" [ref=e89]:
+            - cell "24454" [ref=e90]:
+              - code [ref=e91]: "24454"
+            - cell "Minecraft SimpleVoiceChat port" [ref=e92]
+          - row "25565 Minecraft primary port" [ref=e93]:
+            - cell "25565" [ref=e94]:
+              - code [ref=e95]: "25565"
+            - cell "Minecraft primary port" [ref=e96]
+          - row "25566 Minecraft secondary port" [ref=e97]:
+            - cell "25566" [ref=e98]:
+              - code [ref=e99]: "25566"
+            - cell "Minecraft secondary port" [ref=e100]
+          - row "25567 Minecraft tertiary port" [ref=e101]:
+            - cell "25567" [ref=e102]:
+              - code [ref=e103]: "25567"
+            - cell "Minecraft tertiary port" [ref=e104]
+          - row "19132 Bedrock compatibility port" [ref=e105]:
+            - cell "19132" [ref=e106]:
+              - code [ref=e107]: "19132"
+            - cell "Bedrock compatibility port" [ref=e108]
+  - separator [ref=e109]
+  - contentinfo [ref=e110]:
+    - paragraph [ref=e111]:
+      - link "Go to top" [ref=e112] [cursor=pointer]:
+        - /url: "#top"
+    - img "Gigachad on his PC" [ref=e113]
+    - generic [ref=e135]: Your browser does not support the audio element.
+    - paragraph [ref=e136]: © 2026 Gigachad Network. All rights reserved.

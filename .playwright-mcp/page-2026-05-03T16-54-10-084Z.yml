@@ -1,0 +1,190 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - link "Top" [ref=e3] [cursor=pointer]:
+      - /url: "#top"
+    - link "Services" [ref=e4] [cursor=pointer]:
+      - /url: "#services"
+    - link "Game Servers" [ref=e5] [cursor=pointer]:
+      - /url: "#gameservers"
+    - link "Articles" [ref=e6] [cursor=pointer]:
+      - /url: "#articles"
+    - button "Current theme Light. Activate to switch to OLED." [ref=e7] [cursor=pointer]: Light
+    - button "Retro skin Off. Activate to switch to Win95." [ref=e8] [cursor=pointer]: "Retro: Off"
+  - banner [ref=e9]:
+    - heading "The Gigachad Network" [level=1] [ref=e10]:
+      - link "The Gigachad Network" [ref=e11] [cursor=pointer]:
+        - /url: /index.html
+    - img "Gigachad Network homepage banner" [ref=e12]
+    - heading "If you can't find a way, make one." [level=3] [ref=e13]
+  - separator [ref=e14]
+  - main [ref=e15]:
+    - generic [ref=e16]:
+      - heading "Welcome to The Gigachad Network" [level=2] [ref=e17]
+      - paragraph [ref=e18]: After years of being subjected to the whimsical inefficiencies of cringe software companies, doomed to the pains of not owning our own technology, we have decided we had enough.
+      - paragraph [ref=e19]: We present to you the Gigachad Network, a collection of self-hosted services and game servers that you can use to take back control of your digital life. We are not affiliated with any company, we are not beholden to any corporation, and we do not sell your data. We are just a group of people who want to make the internet a better place. We are not here to make money, we are here to make a difference.
+      - heading "We are not a company, we are not a business, we are Gigachads ." [level=4] [ref=e20]:
+        - text: We are not a company, we are not a business, we are
+        - link "Gigachads" [ref=e21] [cursor=pointer]:
+          - /url: https://www.youtube.com/watch?v=AnwNuH497RE
+        - text: .
+      - paragraph [ref=e22]: Bread, Hyperdriveguy, Ben_bone_
+      - generic [ref=e23]:
+        - img "Bread's Signature" [ref=e24]
+        - img "Hyperdriveguy's Signature" [ref=e25]
+        - img "Ben_bone_'s Signature" [ref=e26]
+    - separator [ref=e27]
+    - generic [ref=e28]:
+      - heading "Gigachad Network Services" [level=2] [ref=e29]
+      - paragraph [ref=e30]:
+        - text: All services are
+        - strong [ref=e31]: self-hosted
+        - text: "- your data stays private and under your control. Ad-free and payment free. Click any service to launch it, or view the tutorial for setup instructions."
+      - generic [ref=e32]:
+        - generic [ref=e33]:
+          - link "Jellyfin Jellyfin Media Streaming" [ref=e34] [cursor=pointer]:
+            - /url: https://watch.gigachad.website
+            - generic [ref=e35]:
+              - img "Jellyfin" [ref=e36]
+              - text: Jellyfin
+            - generic [ref=e37]: Media Streaming
+          - link "Tutorial" [ref=e38] [cursor=pointer]:
+            - /url: tutorials/media/jellyfin.html
+        - generic [ref=e39]:
+          - link "AudiobookShelf AudiobookShelf Audiobooks & Podcasts" [ref=e40] [cursor=pointer]:
+            - /url: https://listen.gigachad.website
+            - generic [ref=e41]:
+              - img "AudiobookShelf" [ref=e42]
+              - text: AudiobookShelf
+            - generic [ref=e43]: Audiobooks & Podcasts
+          - link "Tutorial" [ref=e44] [cursor=pointer]:
+            - /url: tutorials/media/audiobook.html
+        - generic [ref=e45]:
+          - link "Navidrome Navidrome Music Streaming" [ref=e46] [cursor=pointer]:
+            - /url: https://music.gigachad.website
+            - generic [ref=e47]:
+              - img "Navidrome" [ref=e48]
+              - text: Navidrome
+            - generic [ref=e49]: Music Streaming
+          - link "Tutorial" [ref=e50] [cursor=pointer]:
+            - /url: tutorials/media/navidrome.html
+        - generic [ref=e51]:
+          - link "Toast Host Toast Host Game Server Hosting" [ref=e52] [cursor=pointer]:
+            - /url: https://toast-host.com
+            - generic [ref=e53]:
+              - img "Toast Host" [ref=e54]
+              - text: Toast Host
+            - generic [ref=e55]: Game Server Hosting
+          - link "Tutorial" [ref=e56] [cursor=pointer]:
+            - /url: tutorials/hosting/toast-host.html
+        - generic [ref=e57]:
+          - link "Gigachad AI Gigachad AI AI Chat & Tools" [ref=e58] [cursor=pointer]:
+            - /url: https://ai.gigachad.website
+            - generic [ref=e59]:
+              - img "Gigachad AI" [ref=e60]
+              - text: Gigachad AI
+            - generic [ref=e61]: AI Chat & Tools
+          - link "Tutorial" [ref=e62] [cursor=pointer]:
+            - /url: tutorials/media/gigachad-ai.html
+        - link "Nextcloud NextCloud Cloud Storage" [ref=e64] [cursor=pointer]:
+          - /url: https://cloud.gigachad.website
+          - generic [ref=e65]:
+            - img "Nextcloud" [ref=e66]
+            - text: NextCloud
+          - generic [ref=e67]: Cloud Storage
+        - link "Jellyseer Jellyseer Content Requests" [ref=e69] [cursor=pointer]:
+          - /url: https://seer.gigachad.website
+          - generic [ref=e70]:
+            - img "Jellyseer" [ref=e71]
+            - text: Jellyseer
+          - generic [ref=e72]: Content Requests
+        - link "WireGuard VPN WireGuard Access" [ref=e74] [cursor=pointer]:
+          - /url: tutorials/networking/vpn.html
+          - generic [ref=e75]:
+            - img "WireGuard" [ref=e76]
+            - text: VPN
+          - generic [ref=e77]: WireGuard Access
+        - link "Vaultwarden Vaultwarden Password Manager" [ref=e79] [cursor=pointer]:
+          - /url: services/vaultwarden.html
+          - generic [ref=e80]:
+            - img "Vaultwarden" [ref=e81]
+            - text: Vaultwarden
+          - generic [ref=e82]: Password Manager
+    - separator [ref=e83]
+    - generic [ref=e84]:
+      - heading "Game Servers" [level=2] [ref=e85]
+      - paragraph [ref=e86]: Join our community game servers. All servers are maintained by the Gigachad Network team.
+      - generic [ref=e87]:
+        - link "Minecraft Vanilla Java & Bedrock • 1.21.11" [ref=e89] [cursor=pointer]:
+          - /url: games/minecraft/vanilla.html
+          - generic [ref=e90]: Minecraft Vanilla
+          - generic [ref=e91]: Java & Bedrock • 1.21.11
+        - link "Minecraft Create Modded • 1.20.1" [ref=e93] [cursor=pointer]:
+          - /url: games/minecraft/create.html
+          - generic [ref=e94]: Minecraft Create
+          - generic [ref=e95]: Modded • 1.20.1
+        - link "Abyssal Ascent Hardcore • 1.19.2" [ref=e97] [cursor=pointer]:
+          - /url: games/minecraft/abyssal-ascent.html
+          - generic [ref=e98]: Abyssal Ascent
+          - generic [ref=e99]: Hardcore • 1.19.2
+        - link "Minecraft Beta 1.7.3 Classic • Nostalgia" [ref=e101] [cursor=pointer]:
+          - /url: games/minecraft/beta.html
+          - generic [ref=e102]: Minecraft Beta 1.7.3
+          - generic [ref=e103]: Classic • Nostalgia
+        - link "Valheim Modded Modded • Immersive" [ref=e105] [cursor=pointer]:
+          - /url: games/valheim.html
+          - generic [ref=e106]: Valheim Modded
+          - generic [ref=e107]: Modded • Immersive
+        - link "Valheim Vanilla Vanilla • No Mods" [ref=e109] [cursor=pointer]:
+          - /url: games/valheim-vanilla.html
+          - generic [ref=e110]: Valheim Vanilla
+          - generic [ref=e111]: Vanilla • No Mods
+        - link "Factorio Vanilla Vanilla • Automation" [ref=e113] [cursor=pointer]:
+          - /url: games/factorio.html
+          - generic [ref=e114]: Factorio Vanilla
+          - generic [ref=e115]: Vanilla • Automation
+    - separator [ref=e116]
+    - generic [ref=e117]:
+      - heading "Articles" [level=2] [ref=e118]
+      - heading "How to Torrent Like a Chad" [level=3] [ref=e119]:
+        - link "How to Torrent Like a Chad" [ref=e120] [cursor=pointer]:
+          - /url: articles/torrenting.html
+      - heading "Bypass CGNAT Like a Chad" [level=3] [ref=e121]:
+        - link "Bypass CGNAT Like a Chad" [ref=e122] [cursor=pointer]:
+          - /url: https://rentry.org/bypass-cgnat-like-a-chad
+      - heading "Harden Your Network With Wazuh" [level=3] [ref=e123]:
+        - link "Harden Your Network With Wazuh" [ref=e124] [cursor=pointer]:
+          - /url: articles/under-construction.html
+      - heading "Escape Any Network With DNS Tunneling" [level=3] [ref=e125]:
+        - link "Escape Any Network With DNS Tunneling" [ref=e126] [cursor=pointer]:
+          - /url: articles/under-construction.html
+      - heading "The Dating Guide" [level=3] [ref=e127]:
+        - link "The Dating Guide" [ref=e128] [cursor=pointer]:
+          - /url: https://date.gigachad.website/index.php?title=Main_Page
+      - heading "Secure your Digital Life" [level=3] [ref=e129]:
+        - link "Secure your Digital Life" [ref=e130] [cursor=pointer]:
+          - /url: https://www.privacyguides.org
+      - heading "Degoogle your Life" [level=3] [ref=e131]:
+        - link "Degoogle your Life" [ref=e132] [cursor=pointer]:
+          - /url: https://www.reddit.com/r/degoogle/comments/bsa6al/getting_started_why_you_should_degoogle
+    - separator [ref=e133]
+    - generic [ref=e134]:
+      - heading "Contact" [level=2] [ref=e135]
+      - paragraph [ref=e136]:
+        - text: Email us at
+        - link "v4bkmt0jv@mozmail.com" [ref=e137] [cursor=pointer]:
+          - /url: mailto:v4bkmt0jv@mozmail.com
+      - paragraph [ref=e138]: For support, contact us on Discord.
+      - list [ref=e139]:
+        - listitem [ref=e140]: Bread @lefthandedbread
+        - listitem [ref=e141]: Hyperdriveguy @hyperdriveguy
+        - listitem [ref=e142]: Ben_bone_ @ben_bone_
+      - paragraph [ref=e143]:
+        - text: For general discussion, you can join our
+        - link "Discord Server" [ref=e144] [cursor=pointer]:
+          - /url: https://discord.gg/jm6MG6HSbh
+        - text: .
+  - separator [ref=e145]
+  - contentinfo [ref=e146]:
+    - img "Gigachad on his PC" [ref=e147]
+    - generic [ref=e169]: Your browser does not support the audio element.
+    - paragraph [ref=e170]: © 2026 Gigachad Network. All rights reserved.
