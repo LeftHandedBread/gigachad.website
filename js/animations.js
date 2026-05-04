@@ -1,31 +1,31 @@
 // animations.js - Gigachad Network animations and interactions
 
+const PREFERS_REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 // ===== SCROLL PROGRESS BAR =====
 function updateScrollProgress() {
     const scrollProgress = document.getElementById('scroll-progress');
+    if (!scrollProgress) return;
     const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    if (windowHeight <= 0) return;
     const scrolled = (window.scrollY / windowHeight) * 100;
     scrollProgress.style.width = scrolled + '%';
 }
-
-window.addEventListener('scroll', updateScrollProgress);
 
 // ===== FLOATING PARTICLES =====
 function createParticles() {
     const container = document.getElementById('particles-container');
     if (!container) return;
+    if (PREFERS_REDUCED_MOTION) return;
 
     const particleCount = 15;
 
     for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle';
-
-        // Random starting position
         particle.style.left = Math.random() * 100 + '%';
         particle.style.animationDelay = Math.random() * 15 + 's';
         particle.style.animationDuration = (15 + Math.random() * 10) + 's';
-
         container.appendChild(particle);
     }
 }
@@ -33,11 +33,23 @@ function createParticles() {
 // ===== SCROLL-TRIGGERED FADE-IN ANIMATIONS =====
 function handleScrollAnimations() {
     const sections = document.querySelectorAll('.fade-in-section');
+    if (!sections.length) return;
 
+    if (PREFERS_REDUCED_MOTION) {
+        sections.forEach(s => s.classList.add('is-visible'));
+        return;
+    }
+
+    let visibleCount = 0;
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+                visibleCount++;
+                if (visibleCount === sections.length) {
+                    observer.disconnect();
+                }
             }
         });
     }, {
@@ -45,50 +57,7 @@ function handleScrollAnimations() {
         rootMargin: '0px 0px -50px 0px'
     });
 
-    sections.forEach(section => {
-        observer.observe(section);
-    });
-}
-
-// ===== PARALLAX EFFECT FOR HEADER IMAGE =====
-function handleParallax() {
-    const headerImg = document.querySelector('header img');
-    if (!headerImg) return;
-
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const rate = scrolled * 0.3;
-
-        if (scrolled < 600) { // Only apply when header is visible
-            headerImg.style.transform = `translateY(${rate}px) scale(1)`;
-        }
-    });
-}
-
-// ===== NAVIGATION ACTIVE INDICATOR =====
-function updateActiveNavigation() {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-btn');
-
-    window.addEventListener('scroll', () => {
-        let current = '';
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-
-            if (window.pageYOffset >= sectionTop - 200) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
-    });
+    sections.forEach(section => observer.observe(section));
 }
 
 // ===== SMOOTH REVEAL FOR SECTIONS =====
@@ -101,12 +70,47 @@ function addFadeInSections() {
     });
 }
 
-// ===== AUDIO VISUALIZER (Simple Version) =====
+// ===== UNIFIED SCROLL HANDLER (progress bar + parallax + active nav) =====
+function handleScroll() {
+    updateScrollProgress();
+
+    if (!PREFERS_REDUCED_MOTION) {
+        const headerImg = document.querySelector('header img');
+        const scrolled = window.pageYOffset;
+        if (headerImg && scrolled < 600) {
+            headerImg.style.transform = `translateY(${scrolled * 0.3}px) scale(1)`;
+        }
+    }
+
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-btn');
+    if (sections.length && navLinks.length) {
+        let current = '';
+        sections.forEach(section => {
+            if (window.pageYOffset >= section.offsetTop - 200) {
+                current = section.getAttribute('id');
+            }
+        });
+        navLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+        });
+    }
+}
+
+let scrollRaf = null;
+window.addEventListener('scroll', () => {
+    if (scrollRaf !== null) return;
+    scrollRaf = window.requestAnimationFrame(() => {
+        handleScroll();
+        scrollRaf = null;
+    });
+}, { passive: true });
+
+// ===== AUDIO VISUALIZER =====
 function createAudioVisualizer() {
     const audio = document.querySelector('footer audio');
     if (!audio) return;
 
-    // Create visualizer container
     const visualizer = document.createElement('div');
     visualizer.id = 'audio-visualizer';
     visualizer.style.cssText = `
@@ -123,7 +127,6 @@ function createAudioVisualizer() {
     const accentColor = rootStyles.getPropertyValue('--primary').trim() || '#ffc56d';
     const accentLightColor = rootStyles.getPropertyValue('--primary-light').trim() || '#ffaa3d';
 
-    // Create bars
     for (let i = 0; i < 20; i++) {
         const bar = document.createElement('div');
         bar.className = 'visualizer-bar';
@@ -139,37 +142,40 @@ function createAudioVisualizer() {
 
     audio.parentNode.insertBefore(visualizer, audio);
 
-    // Animate bars when audio is playing
-    audio.addEventListener('play', () => {
-        const bars = visualizer.querySelectorAll('.visualizer-bar');
+    let visualizerInterval = null;
+    const bars = visualizer.querySelectorAll('.visualizer-bar');
 
-        setInterval(() => {
-            if (!audio.paused) {
-                bars.forEach(bar => {
-                    const height = Math.random() * 50 + 10;
-                    bar.style.height = height + 'px';
-                });
-            } else {
-                bars.forEach(bar => {
-                    bar.style.height = '10px';
-                });
-            }
+    function resetBars() {
+        bars.forEach(bar => { bar.style.height = '10px'; });
+    }
+
+    function stopVisualizer() {
+        if (visualizerInterval !== null) {
+            clearInterval(visualizerInterval);
+            visualizerInterval = null;
+        }
+        resetBars();
+    }
+
+    audio.addEventListener('play', () => {
+        if (PREFERS_REDUCED_MOTION) return;
+        if (visualizerInterval !== null) clearInterval(visualizerInterval);
+        visualizerInterval = setInterval(() => {
+            if (audio.paused) return;
+            bars.forEach(bar => {
+                bar.style.height = (Math.random() * 50 + 10) + 'px';
+            });
         }, 100);
     });
 
-    audio.addEventListener('pause', () => {
-        const bars = visualizer.querySelectorAll('.visualizer-bar');
-        bars.forEach(bar => {
-            bar.style.height = '10px';
-        });
-    });
+    audio.addEventListener('pause', stopVisualizer);
+    audio.addEventListener('ended', stopVisualizer);
 }
 
-// ===== CURSOR TRAIL EFFECT - REMOVED =====
-// Removed per user request
-
-// ===== ENHANCED BUTTON RIPPLE EFFECT =====
+// ===== BUTTON RIPPLE EFFECT =====
 function addButtonRipples() {
+    if (PREFERS_REDUCED_MOTION) return;
+
     const buttons = document.querySelectorAll('.service-btn, .nav-btn');
 
     buttons.forEach(button => {
@@ -193,12 +199,10 @@ function addButtonRipples() {
             `;
 
             this.appendChild(ripple);
-
             setTimeout(() => ripple.remove(), 600);
         });
     });
 
-    // Add ripple animation CSS if not exists
     if (!document.getElementById('ripple-animation')) {
         const style = document.createElement('style');
         style.id = 'ripple-animation';
@@ -217,7 +221,9 @@ function addButtonRipples() {
 // ===== IMAGE LAZY LOAD WITH ANIMATION =====
 function handleImageLazyLoad() {
     const images = document.querySelectorAll('img[loading="lazy"]');
+    if (!images.length) return;
 
+    let loadedCount = 0;
     const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -225,11 +231,16 @@ function handleImageLazyLoad() {
                 img.style.opacity = '0';
                 img.style.transition = 'opacity 0.5s ease-in';
 
-                img.onload = () => {
+                img.addEventListener('load', () => {
                     img.style.opacity = '1';
-                };
+                });
+                if (img.complete) img.style.opacity = '1';
 
                 observer.unobserve(img);
+                loadedCount++;
+                if (loadedCount === images.length) {
+                    observer.disconnect();
+                }
             }
         });
     });
@@ -237,9 +248,15 @@ function handleImageLazyLoad() {
     images.forEach(img => imageObserver.observe(img));
 }
 
-// ===== ENHANCED HR ANIMATIONS =====
+// ===== HR ANIMATIONS =====
 function animateHorizontalRules() {
     const hrs = document.querySelectorAll('hr');
+    if (!hrs.length) return;
+
+    if (PREFERS_REDUCED_MOTION) {
+        hrs.forEach(hr => { hr.style.opacity = '1'; });
+        return;
+    }
 
     hrs.forEach(hr => {
         hr.style.opacity = '0';
@@ -247,11 +264,17 @@ function animateHorizontalRules() {
         hr.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     });
 
+    let revealedCount = 0;
     const hrObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'scaleX(1)';
+                hrObserver.unobserve(entry.target);
+                revealedCount++;
+                if (revealedCount === hrs.length) {
+                    hrObserver.disconnect();
+                }
             }
         });
     }, { threshold: 0.5 });
@@ -259,35 +282,18 @@ function animateHorizontalRules() {
     hrs.forEach(hr => hrObserver.observe(hr));
 }
 
-// ===== INITIALIZE ALL ANIMATIONS =====
+// ===== INITIALIZE =====
 document.addEventListener('DOMContentLoaded', () => {
-    // Create scroll progress bar element
     const scrollProgress = document.createElement('div');
     scrollProgress.id = 'scroll-progress';
     document.body.prepend(scrollProgress);
 
-    // Initialize all features
     addFadeInSections();
     handleScrollAnimations();
-    handleParallax();
-    updateActiveNavigation();
+    createParticles();
     createAudioVisualizer();
     addButtonRipples();
     handleImageLazyLoad();
     animateHorizontalRules();
-
-    console.log('🎮 Gigachad Network animations loaded!');
+    handleScroll();
 });
-
-// ===== PERFORMANCE OPTIMIZATION =====
-// Debounce scroll events for better performance
-let scrollTimeout;
-window.addEventListener('scroll', () => {
-    if (scrollTimeout) {
-        window.cancelAnimationFrame(scrollTimeout);
-    }
-
-    scrollTimeout = window.requestAnimationFrame(() => {
-        updateScrollProgress();
-    });
-}, { passive: true });

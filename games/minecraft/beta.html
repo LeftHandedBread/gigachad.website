@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Join the Gigachad Network Beta 1.7.3 Minecraft server. Experience classic Minecraft nostalgia from 2011.">
     <link rel="icon" href="/img/favicon.png" type="image/png">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Gigachad Network - Minecraft Beta 1.7.3">
+    <meta property="og:description" content="Join the Gigachad Network Beta 1.7.3 Minecraft server. Experience classic Minecraft nostalgia from 2011.">
+    <meta property="og:image" content="https://gigachad.website/img/gigachad-homepage.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <title>Gigachad Network - Minecraft Beta 1.7.3</title>
     <script src="/js/theme.js"></script>
     <link rel="stylesheet" href="/css/styles.css">
@@ -16,6 +21,7 @@
         <a class="nav-btn" href="/index.html#services">Services</a>
         <a class="nav-btn" href="/index.html#gameservers">Game Servers</a>
         <a class="nav-btn" href="/index.html#articles">Articles</a>
+        <button class="nav-btn theme-toggle" type="button">Mode</button>
         <button class="nav-btn retro-toggle" type="button" aria-pressed="false">Retro</button>
     </nav>
     <header>
@@ -26,7 +32,7 @@
     </header>
     <main>
         <section>
-            <h1 id="Beta">Minecraft Beta 1.7.3</h1>
+            <h2 id="Beta">Minecraft Beta 1.7.3</h2>
             <h2>About</h2>
             <p>
                 Experience Minecraft the way it was meant to be played - Beta 1.7.3 from July 2011.
@@ -37,17 +43,17 @@
         <section id="server-info">
             <h2>Server Information</h2>
             <p style="text-align:center; text-indent:0;">Minecraft Beta 1.7.3 &mdash; Java Edition only. Modern clients won't work.</p>
-            <div style="display:flex; flex-direction:column; align-items:center; gap:1rem; margin:1.5rem auto;">
-                <div style="display:flex; flex-direction:column; background:#222; border:2px solid #ffc56d; border-radius:10px; padding:1.2rem 2.5rem; text-align:center; box-shadow:0 0 16px rgba(255,197,109,0.2);">
-                    <p style="text-indent:0; margin:0 0 0.5rem 0; font-size:0.9rem; color:#888; text-transform:uppercase; letter-spacing:1px;">Server Address</p>
-                    <p style="text-indent:0; margin:0; font-size:1.5rem; font-family:'Courier New',monospace; color:#ffc56d; font-weight:bold;">mc.toast-host.com:27010</p>
+            <div class="server-info-stack">
+                <div class="server-info-card">
+                    <p class="server-info-label">Server Address</p>
+                    <p class="server-info-value">mc.toast-host.com:27010</p>
                 </div>
             </div>
         </section>
         <section id="recommended-launcher">
             <h2>Recommended Launcher</h2>
             <p>
-                We recommend you download and familiarize yourself with <a href="https://prismlauncher.org/">Prism Launcher</a>, as it is very versatile,
+                We recommend you download and familiarize yourself with <a href="https://prismlauncher.org/" target="_blank" rel="noopener noreferrer">Prism Launcher</a>, as it is very versatile,
                 lightweight, and stable. Prism Launcher is a free, open-source Minecraft launcher that lets you manage multiple instances of the game,
                 each with their own mods, settings, and versions.
             </p>
@@ -61,7 +67,7 @@
                 <li>Open Prism Launcher and click <strong>Add Instance</strong> at the top.</li>
                 <li>Select <strong>Import</strong> on the left side of the dialog.</li>
                 <li>Browse to the downloaded <code>.zip</code> file and select it.</li>
-                <li>Click <strong>OK</strong> â€” Prism will set up the instance with Beta 1.7.3 automatically.</li>
+                <li>Click <strong>OK</strong> — Prism will set up the instance with Beta 1.7.3 automatically.</li>
                 <li>Double-click the new instance to launch the game and connect to the server.</li>
             </ol>
         </section>
@@ -88,6 +94,7 @@
         </audio>
         <p>&copy; 2026 Gigachad Network. All rights reserved.</p>
     </footer>
+    <script src="/js/animations.js"></script>
 </body>
 </html>
 

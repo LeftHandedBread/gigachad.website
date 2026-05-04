@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Learn how to torrent safely and privately with qBittorrent and ProtonVPN. Complete guide to protecting your privacy while downloading torrents.">
     <link rel="icon" href="/img/favicon.png" type="image/png">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Gigachad Network - How to Torrent Like a Chad">
+    <meta property="og:description" content="Learn how to torrent safely and privately with qBittorrent and ProtonVPN. Complete guide to protecting your privacy while downloading torrents.">
+    <meta property="og:image" content="https://gigachad.website/img/gigachad-homepage.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <title>Gigachad Network - How to Torrent Like a Chad</title>
     <script src="/js/theme.js"></script>
     <link rel="stylesheet" href="/css/styles.css">
@@ -16,6 +21,7 @@
         <a class="nav-btn" href="/index.html#services">Services</a>
         <a class="nav-btn" href="/index.html#gameservers">Game Servers</a>
         <a class="nav-btn" href="/index.html#articles">Articles</a>
+        <button class="nav-btn theme-toggle" type="button">Mode</button>
         <button class="nav-btn retro-toggle" type="button" aria-pressed="false">Retro</button>
     </nav>
     <header>
@@ -27,7 +33,7 @@
 
     <main>
         <section id="disclaimer">
-            <p style="background: rgba(255,197,109,0.1); padding: 1em; border-left: 4px solid #ffc56d; border-radius: 4px;">
+            <p class="highlight-note">
                 <strong>Legal Notice:</strong> Torrenting is a file-sharing technology used for many legal purposes including Linux ISOs, open-source software, and public-domain media. Always follow the laws in your country. This guide is for educational purposes only.
             </p>
         </section>
@@ -43,11 +49,11 @@
                 <li><strong><a href="https://mullvad.net" target="_blank" rel="noopener noreferrer">Mullvad</a></strong> &mdash; No personal info required, accepts crypto, excellent for torrenting</li>
             </ul>
 
-            <p style="background: rgba(255,197,109,0.1); padding: 1em; border-left: 4px solid #ffc56d; border-radius: 4px;">
+            <p class="highlight-note">
                 <strong>Critical:</strong> If using a VPN, turn it on <strong>before</strong> opening your torrent client. Make sure it's connected and active.
             </p>
 
-            <p style="background: rgba(255,197,109,0.1); padding: 1em; border-left: 4px solid #ffc56d; border-radius: 4px;">
+            <p class="highlight-note">
                 <strong>Torrenting Without a VPN:</strong> If you choose to torrent without a VPN, minimize your seeding time. Close your torrent client immediately after downloads complete, or pause torrents when finished downloading. The more you seed, the more exposure you have to monitoring.
             </p>
         </section>
@@ -78,7 +84,7 @@
 
             <h3>Video Tutorial</h3>
             <video controls preload="metadata" autoplay muted loop>
-                <source src="/files/videos/binding vpn.mp4" type="video/mp4">
+                <source src="/files/videos/binding-vpn.mp4" type="video/mp4">
                 Your browser does not support the video element.
             </video>
         </section>
@@ -90,7 +96,7 @@
             <h3>What is a Torrent Tracker?</h3>
             <p>A torrent tracker is a website that indexes torrent files and magnet links. Think of it as a search engine for torrents - you search for the content you want, and the tracker provides a .torrent file or magnet link that your torrent client uses to download the actual content from other users (peers) sharing it.</p>
 
-            <p style="background: rgba(255,197,109,0.1); padding: 1em; border-left: 4px solid #ffc56d; border-radius: 4px;">
+            <p class="highlight-note">
                 <strong>Use an adblocker:</strong> Torrent tracker sites are often filled with aggressive ads and pop-ups. Use <a href="https://brave.com/" target="_blank" rel="noopener noreferrer">Brave Browser</a> or <a href="https://www.mozilla.org/firefox/" target="_blank" rel="noopener noreferrer">Firefox</a> + <a href="https://ublockorigin.com/" target="_blank" rel="noopener noreferrer">uBlock Origin</a> to block them.
             </p>
 
@@ -114,7 +120,7 @@
 
             <h3>Video Tutorial</h3>
             <video controls preload="metadata" autoplay muted loop>
-                <source src="/files/videos/Adding torrents into qbittorrent.mp4" type="video/mp4">
+                <source src="/files/videos/adding-torrents-into-qbittorrent.mp4" type="video/mp4">
                 Your browser does not support the video element.
             </video>
         </section>
@@ -122,7 +128,7 @@
 
         <section id="safety-disclaimer">
             <h2>Safety Disclaimer</h2>
-            <p style="background: rgba(255,197,109,0.1); padding: 1em; border-left: 4px solid #ffc56d; border-radius: 4px;">
+            <p class="highlight-note">
                 <strong>Important:</strong> Torrenting, especially piracy, comes with risks. Downloaded files may contain malware, viruses, or other harmful content. Download at your own risk. You can use tools like <a href="https://www.virustotal.com/" target="_blank" rel="noopener noreferrer">VirusTotal</a> to scan downloaded files before opening them - simply upload the file to VirusTotal and it will scan it with multiple antivirus engines.
             </p>
         </section>
@@ -153,6 +159,7 @@
         </audio>
         <p>&copy; 2026 Gigachad Network. All rights reserved.</p>
     </footer>
+    <script src="/js/animations.js"></script>
 </body>
 </html>
 

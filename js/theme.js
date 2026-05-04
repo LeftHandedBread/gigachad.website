@@ -13,8 +13,24 @@
     win95: 'Win95'
   };
 
+  function safeGetItem(key) {
+    try {
+      return localStorage.getItem(key);
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function safeSetItem(key, value) {
+    try {
+      localStorage.setItem(key, value);
+    } catch (e) {
+      // localStorage unavailable (Safari private mode, quota, etc.)
+    }
+  }
+
   function getSavedTheme() {
-    var saved = localStorage.getItem(STORAGE_KEY);
+    var saved = safeGetItem(STORAGE_KEY);
     if (THEMES.indexOf(saved) !== -1) {
       return saved;
     }
@@ -22,7 +38,7 @@
   }
 
   function getSavedRetro() {
-    var saved = localStorage.getItem(RETRO_STORAGE_KEY);
+    var saved = safeGetItem(RETRO_STORAGE_KEY);
     if (RETROS.indexOf(saved) !== -1) {
       return saved;
     }
@@ -111,7 +127,7 @@
     var currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
     var nextTheme = getNextTheme(currentTheme);
 
-    localStorage.setItem(STORAGE_KEY, nextTheme);
+    safeSetItem(STORAGE_KEY, nextTheme);
     applyTheme(nextTheme);
   }
 
@@ -121,7 +137,7 @@
     var currentRetro = document.documentElement.getAttribute('data-retro') || 'off';
     var nextRetro = getNextRetro(currentRetro);
 
-    localStorage.setItem(RETRO_STORAGE_KEY, nextRetro);
+    safeSetItem(RETRO_STORAGE_KEY, nextRetro);
     applyRetro(nextRetro);
   }
 

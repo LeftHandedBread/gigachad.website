@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Join the Gigachad Network vanilla Factorio server. Build, automate, and expand your factory with the community.">
     <link rel="icon" href="/img/favicon.png" type="image/png">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Gigachad Network - Factorio Server">
+    <meta property="og:description" content="Join the Gigachad Network vanilla Factorio server. Build, automate, and expand your factory with the community.">
+    <meta property="og:image" content="https://gigachad.website/img/gigachad-homepage.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <title>Gigachad Network - Factorio Server</title>
     <script src="/js/theme.js"></script>
     <link rel="stylesheet" href="/css/styles.css">
@@ -16,6 +21,7 @@
         <a class="nav-btn" href="/index.html#services">Services</a>
         <a class="nav-btn" href="/index.html#gameservers">Game Servers</a>
         <a class="nav-btn" href="/index.html#articles">Articles</a>
+        <button class="nav-btn theme-toggle" type="button">Mode</button>
         <button class="nav-btn retro-toggle" type="button" aria-pressed="false">Retro</button>
     </nav>
     <header>
@@ -35,18 +41,18 @@
         <section id="minimum-requirements">
             <h2>Minimum Requirements</h2>
             <p>Latest version of Factorio.</p>
-            <p>This server is vanilla â€” no mods needed.</p>
+            <p>This server is vanilla — no mods needed.</p>
         </section>
         <section id="server-info">
             <h2>Server Info</h2>
-            <div style="display:flex; flex-direction:column; align-items:center; gap:1rem; margin:1.5rem auto;">
-                <div style="display:flex; flex-direction:column; background:#222; border:2px solid #ffc56d; border-radius:10px; padding:1.2rem 2.5rem; text-align:center; box-shadow:0 0 16px rgba(255,197,109,0.2);">
-                    <p style="text-indent:0; margin:0 0 0.5rem 0; font-size:0.9rem; color:#888; text-transform:uppercase; letter-spacing:1px;">Server IP</p>
-                    <p style="text-indent:0; margin:0; font-size:1.5rem; font-family:'Courier New',monospace; color:#ffc56d; font-weight:bold;">mc.toast-host.com:27007</p>
+            <div class="server-info-stack">
+                <div class="server-info-card">
+                    <p class="server-info-label">Server IP</p>
+                    <p class="server-info-value">mc.toast-host.com:27007</p>
                 </div>
-                <div style="display:flex; flex-direction:column; background:#222; border:2px solid #ffc56d; border-radius:10px; padding:1.2rem 2.5rem; text-align:center; box-shadow:0 0 16px rgba(255,197,109,0.2);">
-                    <p style="text-indent:0; margin:0 0 0.5rem 0; font-size:0.9rem; color:#888; text-transform:uppercase; letter-spacing:1px;">Password</p>
-                    <p style="text-indent:0; margin:0; font-size:1.5rem; font-family:'Courier New',monospace; color:#ffc56d; font-weight:bold;">bread</p>
+                <div class="server-info-card">
+                    <p class="server-info-label">Password</p>
+                    <p class="server-info-value">bread</p>
                 </div>
             </div>
         </section>
@@ -62,5 +68,6 @@
         </audio>
         <p>&copy; 2026 Gigachad Network. All rights reserved.</p>
     </footer>
+    <script src="/js/animations.js"></script>
 </body>
 </html>

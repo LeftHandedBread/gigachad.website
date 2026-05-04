@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Join the Gigachad Network Valheim server. Explore, build, and survive together in this Viking survival game.">
     <link rel="icon" href="/img/favicon.png" type="image/png">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Gigachad Network - Valheim Server">
+    <meta property="og:description" content="Join the Gigachad Network Valheim server. Explore, build, and survive together in this Viking survival game.">
+    <meta property="og:image" content="https://gigachad.website/img/gigachad-homepage.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <title>Gigachad Network - Valheim Server</title>
     <script src="/js/theme.js"></script>
     <link rel="stylesheet" href="/css/styles.css">
@@ -16,12 +21,13 @@
         <a class="nav-btn" href="/index.html#services">Services</a>
         <a class="nav-btn" href="/index.html#gameservers">Game Servers</a>
         <a class="nav-btn" href="/index.html#articles">Articles</a>
+        <button class="nav-btn theme-toggle" type="button">Mode</button>
         <button class="nav-btn retro-toggle" type="button" aria-pressed="false">Retro</button>
     </nav>
     <header>
         <h1><a href="/index.html">The Gigachad Network</a></h1>
         <img src="/img/valheim.jpg" alt="Valheim game artwork" width="720">
-        <h2>POV: You died in the plains and are trying to get your stuff back.</p>
+        <h2>POV: You died in the plains and are trying to get your stuff back.</h2>
         <hr>
     </header>
     <main>
@@ -37,11 +43,11 @@
         <section id="minimum-requirements">
             <h2>Minimum Requirements</h2>
             <p>Latest version of Valheim.</p>
-            <p>This server is <strong>not</strong> vanilla conpatible. Please use the modpack (install instructions below).</p>
+            <p>This server is <strong>not</strong> vanilla compatible. Please use the modpack (install instructions below).</p>
         </section>
         <section>
             <h2>Playing Valheim With Mods</h2>
-            <p>Fear not, for it is not hard with the right launcher. We use <a href="https://thunderstore.io/package/ebkr/r2modman/">r2modman</a> â€” install it, then follow the steps below.</p>
+            <p>Fear not, for it is not hard with the right launcher. We use <a href="https://thunderstore.io/package/ebkr/r2modman/" target="_blank" rel="noopener noreferrer">r2modman</a> — install it, then follow the steps below.</p>
             <ol>
                 <li>Open R2modman</li>
                 <li>Select Valheim (press the star to pin it to the front)</li>
@@ -54,18 +60,18 @@
             </ol>
             <img src="/img/Install-Mods.gif" alt="Valheim mod installation walkthrough" style="max-width:100%; width:560px; display:block; margin:1.5rem auto;">
             <h3>Modpack code: 019cfea5-53d7-5b73-5863-6e4702717856</h3>
-            <p>If you need help with setting up the modded launcher, or want to install manually, come ask in the <a href="https://discord.gg/mychN9rg6c">Discord</a>.</p>
+            <p>If you need help with setting up the modded launcher, or want to install manually, come ask in the <a href="https://discord.gg/mychN9rg6c" target="_blank" rel="noopener noreferrer">Discord</a>.</p>
         </section>
         <section id="server-info">
             <h2>Server Info</h2>
-            <div style="display:flex; flex-direction:column; align-items:center; gap:1rem; margin:1.5rem auto;">
-                <div style="display:flex; flex-direction:column; background:#222; border:2px solid #ffc56d; border-radius:10px; padding:1.2rem 2.5rem; text-align:center; box-shadow:0 0 16px rgba(255,197,109,0.2);">
-                    <p style="text-indent:0; margin:0 0 0.5rem 0; font-size:0.9rem; color:#888; text-transform:uppercase; letter-spacing:1px;">Server IP</p>
-                    <p style="text-indent:0; margin:0; font-size:1.5rem; font-family:'Courier New',monospace; color:#ffc56d; font-weight:bold;">mc.toast-host.com:27008</p>
+            <div class="server-info-stack">
+                <div class="server-info-card">
+                    <p class="server-info-label">Server IP</p>
+                    <p class="server-info-value">mc.toast-host.com:27008</p>
                 </div>
-                <div style="display:flex; flex-direction:column; background:#222; border:2px solid #ffc56d; border-radius:10px; padding:1.2rem 2.5rem; text-align:center; box-shadow:0 0 16px rgba(255,197,109,0.2);">
-                    <p style="text-indent:0; margin:0 0 0.5rem 0; font-size:0.9rem; color:#888; text-transform:uppercase; letter-spacing:1px;">Password</p>
-                    <p style="text-indent:0; margin:0; font-size:1.5rem; font-family:'Courier New',monospace; color:#ffc56d; font-weight:bold;">bread</p>
+                <div class="server-info-card">
+                    <p class="server-info-label">Password</p>
+                    <p class="server-info-value">bread</p>
                 </div>
             </div>
         </section>
@@ -83,43 +89,43 @@
             <ul class="answer">
                 <li>
                     <strong>Gizmo</strong> (v1.15.0)<br>
-                    <span style="color:grey;">Comfy version of Gizmo for easier building rotation controls.</span>
+                    <span class="muted-inline">Comfy version of Gizmo for easier building rotation controls.</span>
                 </li>
                 <li>
                     <strong>PlantEasily</strong> (v2.1.0)<br>
-                    <span style="color:grey;">Even crop spacing, bulk planting/harvesting, and optional auto-replant.</span>
+                    <span class="muted-inline">Even crop spacing, bulk planting/harvesting, and optional auto-replant.</span>
                 </li>
                 <li>
                     <strong>PlantEverything</strong> (v1.20.0)<br>
-                    <span style="color:grey;">Lets the cultivator plant more flora like berries, mushrooms, and decorative plants.</span>
+                    <span class="muted-inline">Lets the cultivator plant more flora like berries, mushrooms, and decorative plants.</span>
                 </li>
                 <li>
                     <strong>LongshipUpgrades</strong> (v1.0.15)<br>
-                    <span style="color:grey;">Upgrade longships with lanterns, sails, tent, shields, and expanded storage.</span>
+                    <span class="muted-inline">Upgrade longships with lanterns, sails, tent, shields, and expanded storage.</span>
                 </li>
                 <li>
                     <strong>NoMap_Cartography_Map</strong> (v1.0.1)<br>
-                    <span style="color:grey;">Enables map viewing at the cartography table during No Map play.</span>
+                    <span class="muted-inline">Enables map viewing at the cartography table during No Map play.</span>
                 </li>
                 <li>
                     <strong>EpicLoot</strong> (v0.12.11)<br>
-                    <span style="color:grey;">Adds loot drops, magic items, and enchanting.</span>
+                    <span class="muted-inline">Adds loot drops, magic items, and enchanting.</span>
                 </li>
                 <li>
                     <strong>Cooking</strong> (v1.2.2)<br>
-                    <span style="color:grey;">Adds a cooking skill that boosts food-related stats and regeneration.</span>
+                    <span class="muted-inline">Adds a cooking skill that boosts food-related stats and regeneration.</span>
                 </li>
                 <li>
                     <strong>CookingAdditions</strong> (v1.3.1)<br>
-                    <span style="color:grey;">Adds many new foods, ingredients, and additional cooking/processing stations.</span>
+                    <span class="muted-inline">Adds many new foods, ingredients, and additional cooking/processing stations.</span>
                 </li>
                 <li>
                     <strong>ComfyQuickSlots</strong> (v1.9.0)<br>
-                    <span style="color:grey;">Comfy fork of EquipmentAndQuickSlots with dedicated gear and quick-slot support.</span>
+                    <span class="muted-inline">Comfy fork of EquipmentAndQuickSlots with dedicated gear and quick-slot support.</span>
                 </li>
                 <li>
                     <strong>ValheimArmory</strong> (v1.26.1)<br>
-                    <span style="color:grey;">Expands weapon variety to support more playstyles across progression.</span>
+                    <span class="muted-inline">Expands weapon variety to support more playstyles across progression.</span>
                 </li>
             </ul>
         </section>
@@ -135,6 +141,7 @@
         </audio>
         <p>&copy; 2026 Gigachad Network. All rights reserved.</p>
     </footer>
+    <script src="/js/animations.js"></script>
 </body>
 </html>
 

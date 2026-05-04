@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Join the Gigachad Network Valheim vanilla server. Explore, build, and survive together in this Viking survival game.">
     <link rel="icon" href="/img/favicon.png" type="image/png">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Gigachad Network - Valheim Vanilla Server">
+    <meta property="og:description" content="Join the Gigachad Network Valheim vanilla server. Explore, build, and survive together in this Viking survival game.">
+    <meta property="og:image" content="https://gigachad.website/img/gigachad-homepage.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <title>Gigachad Network - Valheim Vanilla Server</title>
     <script src="/js/theme.js"></script>
     <link rel="stylesheet" href="/css/styles.css">
@@ -16,6 +21,7 @@
         <a class="nav-btn" href="/index.html#services">Services</a>
         <a class="nav-btn" href="/index.html#gameservers">Game Servers</a>
         <a class="nav-btn" href="/index.html#articles">Articles</a>
+        <button class="nav-btn theme-toggle" type="button">Mode</button>
         <button class="nav-btn retro-toggle" type="button" aria-pressed="false">Retro</button>
     </nav>
     <header>
@@ -28,25 +34,25 @@
         <section id="about-section">
             <h2>About</h2>
             <p>
-                A no-frills vanilla Valheim server for the purists. No mods, no modpack required â€” just install Valheim and connect.
+                A no-frills vanilla Valheim server for the purists. No mods, no modpack required — just install Valheim and connect.
             </p>
             <br>
         </section>
         <section id="minimum-requirements">
             <h2>Minimum Requirements</h2>
             <p>Latest version of Valheim.</p>
-            <p>This server is vanilla â€” no mods needed.</p>
+            <p>This server is vanilla — no mods needed.</p>
         </section>
         <section id="server-info">
             <h2>Server Info</h2>
-            <div style="display:flex; flex-direction:column; align-items:center; gap:1rem; margin:1.5rem auto;">
-                <div style="display:flex; flex-direction:column; background:#222; border:2px solid #ffc56d; border-radius:10px; padding:1.2rem 2.5rem; text-align:center; box-shadow:0 0 16px rgba(255,197,109,0.2);">
-                    <p style="text-indent:0; margin:0 0 0.5rem 0; font-size:0.9rem; color:#888; text-transform:uppercase; letter-spacing:1px;">Server IP</p>
-                    <p style="text-indent:0; margin:0; font-size:1.5rem; font-family:'Courier New',monospace; color:#ffc56d; font-weight:bold;">192.3.251.174:27004</p>
+            <div class="server-info-stack">
+                <div class="server-info-card">
+                    <p class="server-info-label">Server IP</p>
+                    <p class="server-info-value">192.3.251.174:27004</p>
                 </div>
-                <div style="display:flex; flex-direction:column; background:#222; border:2px solid #ffc56d; border-radius:10px; padding:1.2rem 2.5rem; text-align:center; box-shadow:0 0 16px rgba(255,197,109,0.2);">
-                    <p style="text-indent:0; margin:0 0 0.5rem 0; font-size:0.9rem; color:#888; text-transform:uppercase; letter-spacing:1px;">Password</p>
-                    <p style="text-indent:0; margin:0; font-size:1.5rem; font-family:'Courier New',monospace; color:#ffc56d; font-weight:bold;">bread</p>
+                <div class="server-info-card">
+                    <p class="server-info-label">Password</p>
+                    <p class="server-info-value">bread</p>
                 </div>
             </div>
         </section>
@@ -62,6 +68,7 @@
         </audio>
         <p>&copy; 2026 Gigachad Network. All rights reserved.</p>
     </footer>
+    <script src="/js/animations.js"></script>
 </body>
 </html>
 

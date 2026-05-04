@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Set up secure WireGuard VPN access to the Gigachad Network. Connect to self-hosted services from anywhere with this VPN configuration guide.">
     <link rel="icon" href="/img/favicon.png" type="image/png">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Gigachad Network - VPN">
+    <meta property="og:description" content="Set up secure WireGuard VPN access to the Gigachad Network. Connect to self-hosted services from anywhere with this VPN configuration guide.">
+    <meta property="og:image" content="https://gigachad.website/img/gigachad-homepage.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <title>Gigachad Network - VPN</title>
     <script src="/js/theme.js"></script>
     <link rel="stylesheet" href="/css/styles.css">
@@ -16,6 +21,7 @@
         <a class="nav-btn" href="/index.html#services">Services</a>
         <a class="nav-btn" href="/index.html#gameservers">Game Servers</a>
         <a class="nav-btn" href="/index.html#articles">Articles</a>
+        <button class="nav-btn theme-toggle" type="button">Mode</button>
         <button class="nav-btn retro-toggle" type="button" aria-pressed="false">Retro</button>
     </nav>
     <header>
@@ -103,42 +109,47 @@ PersistentKeepalive = 20
         <hr>
         <section>
             <h2>Port Map</h2>
-            <table> 
-                <th style="width:80px"> Port
-                    <td style="width:300px">Description</td>
-                </th>
-                <tr>
-                    <td><a>53</a></td>
-                    <td>Custom DNS port</td>
-                </tr>
-                <tr>
-                    <td><a>80</a></td>
-                    <td>gigachad.website HTTP port</td>
-                </tr>
-                <tr>
-                    <td><a>2456</a></td>
-                    <td>Valheim server main port</td>
-                </tr>
-                <tr>
-                    <td><a>24454</a></td>
-                    <td>Minecraft SimpleVoiceChat port</td>
-                </tr>
-                <tr>
-                    <td><a>25565</a></td>
-                    <td>Minecraft primary port</td>
-                </tr>
-                <tr>
-                    <td><a>25566</a></td>
-                    <td>Minecraft secondary port</td>
-                </tr>
-                <tr>
-                    <td><a>25567</a></td>
-                    <td>Minecraft terciary port</td>
-                </tr>
-                <tr>
-                    <td><a>19132</a></td>
-                    <td>Bedrock compatibility port</td>
-                </tr>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:80px">Port</th>
+                        <th style="width:300px">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>53</code></td>
+                        <td>Custom DNS port</td>
+                    </tr>
+                    <tr>
+                        <td><code>80</code></td>
+                        <td>gigachad.website HTTP port</td>
+                    </tr>
+                    <tr>
+                        <td><code>2456</code></td>
+                        <td>Valheim server main port</td>
+                    </tr>
+                    <tr>
+                        <td><code>24454</code></td>
+                        <td>Minecraft SimpleVoiceChat port</td>
+                    </tr>
+                    <tr>
+                        <td><code>25565</code></td>
+                        <td>Minecraft primary port</td>
+                    </tr>
+                    <tr>
+                        <td><code>25566</code></td>
+                        <td>Minecraft secondary port</td>
+                    </tr>
+                    <tr>
+                        <td><code>25567</code></td>
+                        <td>Minecraft tertiary port</td>
+                    </tr>
+                    <tr>
+                        <td><code>19132</code></td>
+                        <td>Bedrock compatibility port</td>
+                    </tr>
+                </tbody>
             </table>
         </section>
     </main>
@@ -152,6 +163,7 @@ PersistentKeepalive = 20
         </audio>
         <p>&copy; 2026 Gigachad Network. All rights reserved.</p>
     </footer>
+    <script src="/js/animations.js"></script>
 </body>
 </html>
 

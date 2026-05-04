@@ -410,7 +410,9 @@ img:hover {
 
 iframe {
   width: 800px;
-  height: 450px;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
   display: block;
   margin: 20px auto;
   border-radius: 10px;
@@ -1104,3 +1106,27 @@ video {
   color: var(--text-muted);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .fade-in-section {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .particle {
+    display: none !important;
+  }
+
+  hr {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
