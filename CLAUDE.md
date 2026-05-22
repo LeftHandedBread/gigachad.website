@@ -22,10 +22,9 @@ files/                  # Audio and video assets
 
 ## Theming system
 
-- **Color themes**: dark (default), light, OLED — toggled via `.theme-toggle` button, stored in `localStorage` as `gigachad-theme`, applied as `data-theme` attribute on `<html>`.
-- **Retro skins**: off (default), win95 — toggled via `.retro-toggle` button, stored as `gigachad-retro`, applied as `data-retro` attribute on `<html>`.
-- `js/theme.js` is loaded in `<head>` (before CSS) on every page to prevent flash of unstyled content.
-- `css/retro-win95.css` is included on every page; its rules only activate under `:root[data-retro='win95']`.
+- The Win95 retro skin (`css/retro-win95.css`) is the only active style. `js/theme.js` runs in `<head>` and force-applies `data-retro="win95"` on `<html>` on every page load.
+- `css/styles.css` (the non-retro base) is still linked on every page and intentionally kept so the retro skin's overrides have something to override. It is hidden behind the retro overlay; do not delete it.
+- No user-facing toggles. The previous `.theme-toggle` and `.retro-toggle` buttons (and the dark/light/OLED + retro on/off logic that powered them) were removed. If you re-add user theming, restore both the buttons and the toggle logic in `js/theme.js`.
 
 ## Conventions
 
