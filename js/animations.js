@@ -106,10 +106,12 @@ window.addEventListener('scroll', () => {
     });
 }, { passive: true });
 
-// ===== AUDIO VISUALIZER =====
+// ===== AUDIO VISUALIZER (Web Audio API) =====
 function createAudioVisualizer() {
     const audio = document.querySelector('footer audio');
     if (!audio) return;
+
+    const barCount = 20;
 
     const visualizer = document.createElement('div');
     visualizer.id = 'audio-visualizer';
@@ -127,7 +129,7 @@ function createAudioVisualizer() {
     const accentColor = rootStyles.getPropertyValue('--primary').trim() || '#ffc56d';
     const accentLightColor = rootStyles.getPropertyValue('--primary-light').trim() || '#ffaa3d';
 
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < barCount; i++) {
         const bar = document.createElement('div');
         bar.className = 'visualizer-bar';
         bar.style.cssText = `
@@ -135,41 +137,99 @@ function createAudioVisualizer() {
             height: 10px;
             background: linear-gradient(to top, ${accentColor}, ${accentLightColor});
             border-radius: 3px 3px 0 0;
-            transition: height 0.1s ease;
         `;
         visualizer.appendChild(bar);
     }
 
     audio.parentNode.insertBefore(visualizer, audio);
 
-    let visualizerInterval = null;
-    const bars = visualizer.querySelectorAll('.visualizer-bar');
+    const bars = Array.from(visualizer.querySelectorAll('.visualizer-bar'));
+    let rafId = null;
+    let audioCtx = null;
+    let analyser = null;
+    let freqData = null;
+    let sourceCreated = false;
+
+    function buildGraph() {
+        const Ctx = window.AudioContext || window.webkitAudioContext;
+        if (!Ctx) return false;
+        audioCtx = new Ctx();
+        const source = audioCtx.createMediaElementSource(audio);
+        analyser = audioCtx.createAnalyser();
+        analyser.fftSize = 256;
+        analyser.smoothingTimeConstant = 0.8;
+        source.connect(analyser);
+        analyser.connect(audioCtx.destination);
+        freqData = new Uint8Array(analyser.frequencyBinCount);
+        return true;
+    }
 
     function resetBars() {
         bars.forEach(bar => { bar.style.height = '10px'; });
     }
 
-    function stopVisualizer() {
-        if (visualizerInterval !== null) {
-            clearInterval(visualizerInterval);
-            visualizerInterval = null;
+    function stopLoop() {
+        if (rafId !== null) {
+            cancelAnimationFrame(rafId);
+            rafId = null;
+        }
+        if (audioCtx && audioCtx.state === 'running') {
+            audioCtx.suspend();
         }
         resetBars();
     }
 
+    function draw() {
+        rafId = null;
+        analyser.getByteFrequencyData(freqData);
+
+        // Use the lower ~80% of the spectrum; the top bins are mostly inaudible hiss.
+        const usable = Math.floor(freqData.length * 0.8);
+        const step = usable / barCount;
+
+        for (let i = 0; i < barCount; i++) {
+            const start = Math.floor(i * step);
+            const end = Math.max(start + 1, Math.floor((i + 1) * step));
+            let sum = 0;
+            for (let j = start; j < end; j++) sum += freqData[j];
+            const value = sum / (end - start) / 255;
+            bars[i].style.height = (10 + value * 50) + 'px';
+        }
+
+        if (!audio.paused) {
+            rafId = window.requestAnimationFrame(draw);
+        }
+    }
+
     audio.addEventListener('play', () => {
         if (PREFERS_REDUCED_MOTION) return;
-        if (visualizerInterval !== null) clearInterval(visualizerInterval);
-        visualizerInterval = setInterval(() => {
-            if (audio.paused) return;
-            bars.forEach(bar => {
-                bar.style.height = (Math.random() * 50 + 10) + 'px';
-            });
-        }, 100);
+        if (!sourceCreated) {
+            if (!buildGraph()) {
+                rafId = window.requestAnimationFrame(drawFallback);
+            }
+            sourceCreated = true;
+        }
+        if (audioCtx && audioCtx.state !== 'running') {
+            audioCtx.resume();
+        }
+        if (rafId === null) {
+            rafId = window.requestAnimationFrame(draw);
+        }
     });
 
-    audio.addEventListener('pause', stopVisualizer);
-    audio.addEventListener('ended', stopVisualizer);
+    // Fallback for browsers without Web Audio: gentle random motion, clearly decorative.
+    function drawFallback() {
+        rafId = null;
+        bars.forEach(bar => {
+            bar.style.height = (Math.random() * 50 + 10) + 'px';
+        });
+        if (!audio.paused) {
+            rafId = window.requestAnimationFrame(drawFallback);
+        }
+    }
+
+    audio.addEventListener('pause', stopLoop);
+    audio.addEventListener('ended', stopLoop);
 }
 
 // ===== BUTTON RIPPLE EFFECT =====

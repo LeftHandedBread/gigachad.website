@@ -9,8 +9,7 @@ Static HTML/CSS/JS website for **The Gigachad Network** — a self-hosted servic
 ```
 index.html              # Main landing page (services, game servers, articles)
 css/styles.css          # Primary stylesheet, CSS variables, shared classes (the active style)
-css/retro-win95.css     # Windows 95 retro skin (legacy/unused — no page links it)
-js/theme.js             # Placeholder file, kept so existing page includes resolve
+js/theme.js             # Shared utilities (email obfuscation); loaded in every page head
 js/animations.js        # Scroll progress bar, floating particles, intersection observers
 games/                  # Game server pages (minecraft/, valheim, factorio)
 tutorials/              # Setup guides (media/, hosting/, networking/)
@@ -23,7 +22,7 @@ files/                  # Audio and video assets
 ## Theming system
 
 - `css/styles.css` (original style) is the active theme, linked on every page.
-- `css/retro-win95.css` is a legacy Win95 skin. Nothing activates it (no `data-retro="win95"` attribute, no page links it). To bring it back, re-link it and set `data-retro="win95"` on `<html>`.
+- A legacy `css/retro-win95.css` Win95 skin was removed (unlinked; recover from git history if ever needed).
 - No user-facing toggles. The previous `.theme-toggle` and `.retro-toggle` buttons (and the dark/light/OLED + retro on/off logic that powered them) were removed. If you re-add user theming, restore both the buttons and the toggle logic in `js/theme.js`.
 
 ## Conventions
