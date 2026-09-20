@@ -19,7 +19,9 @@
       "mcp__playwright__browser_evaluate",
       "mcp__plugin_context-mode_context-mode__ctx_batch_execute",
       "mcp__plugin_context-mode_context-mode__ctx_execute",
-      "mcp__playwright__browser_click"
+      "mcp__playwright__browser_click",
+      "Bash(git mv *)",
+      "Bash(git *)"
     ]
   }
 }

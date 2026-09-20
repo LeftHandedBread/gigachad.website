@@ -20,7 +20,7 @@ The Gigachad Network is a collection of self-hosted services and game servers de
 
 ## Game Servers
 
-- Minecraft Create Server
+- Minecraft Create Aeronautics Server (1.21.1)
 - Minecraft Vanilla Server (1.21.11, Java/Bedrock crossplay)
 - Minecraft Abyssal Ascent
 - Valheim Server
