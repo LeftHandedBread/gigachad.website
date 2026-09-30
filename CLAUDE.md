@@ -12,8 +12,8 @@ css/styles.css          # Primary stylesheet, CSS variables, shared classes (the
 js/theme.js             # Shared utilities (email obfuscation); loaded in every page head
 js/animations.js        # Scroll progress bar, floating particles, intersection observers
 games/                  # Game server pages (minecraft/, valheim, factorio)
-tutorials/              # Setup guides (media/, hosting/, networking/)
-services/               # Service pages (vaultwarden coming-soon)
+tutorials/              # Setup guides (media/, hosting/, networking/, community/)
+services/               # Service pages (Fluxer chat server)
 articles/               # Guides (torrenting, under-construction placeholder)
 img/                    # Images, logos, signatures, favicons
 files/                  # Audio and video assets
@@ -37,7 +37,7 @@ files/                  # Audio and video assets
 
 ## Services
 
-Jellyfin, Jellyseerr, AudiobookShelf, NextCloud, Gigachad AI, VPN/WireGuard, Vaultwarden (coming soon), Navidrome, Toast Host.
+Jellyfin, Jellyseerr, AudiobookShelf, NextCloud, Gigachad AI, VPN/WireGuard, Fluxer (self-hosted chat, chat.gigachad.website), Navidrome, Toast Host.
 
 ## Game servers
 
